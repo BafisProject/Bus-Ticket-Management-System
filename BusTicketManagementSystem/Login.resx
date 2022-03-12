@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLogin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXcAAAAwCAYAAADq6jqeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGPSURBVHhe7dqhchNRGIbhlZVIJBJZySX0EnCpaHY7qEpc
@@ -134,7 +134,7 @@
         zHI3DL8BksA6HxHiRkEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="loginUsername.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAXcAAAAwCAYAAADq6jqeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVHhe7dihbtxAFIZRw8CSKp5xJBcWhnTthizNIxQW
@@ -210,12 +210,6 @@
         EFDSr3thGaAn45raII+Hh4eHh4eHh4eHh4eHh4eHh4enh0Sl+h8cXwUi3d9vBQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>141, 17</value>
-  </metadata>
-  <metadata name="bunifuDragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>301, 17</value>
-  </metadata>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWYAAABuCAYAAAAUArnPAAAABGdBTUEAALGPC/xhBQAAFS1JREFUeF7t
@@ -312,4 +306,10 @@
         ACGEEEIIIYR4Br777n/ifqZdk3X6dAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
+  <metadata name="bunifuDragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>301, 17</value>
+  </metadata>
 </root>

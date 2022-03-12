@@ -22,3 +22,7 @@ C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementS
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.csproj.CopyComplete
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.exe
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.pdb
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.Dashboard.resources
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.User_Controls.User_Dashboard.resources
