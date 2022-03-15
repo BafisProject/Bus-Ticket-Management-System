@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,12 +30,14 @@ namespace BusTicketManagementSystem
         {
             btnDashboard.Checked = false;
             btnAvailable.Checked = false;
+            btnBusInfo.Checked = false;
         }
 
         private void hideallUserControl()
         {
             user_Dashboard1.Visible = false;
             available_Trip1.Visible = false;
+            bus_Info1.Visible = false;
         }
 
         private void showUserControl(UserControl x, Guna2Button y)
@@ -59,14 +62,27 @@ namespace BusTicketManagementSystem
             
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
+
+
+        private void dashboardSidebarButton_Click(object sender, EventArgs e)
         {
-            showUserControl(user_Dashboard1, btnDashboard);
+            Guna2Button button = (Guna2Button) sender;
+            string userControlName = button.Tag.ToString();
+
+            switch (userControlName)
+            {
+                case "user_Dashboard1":
+                    showUserControl(user_Dashboard1, button);
+                    break;
+                case "available_Trip1":
+                    showUserControl(available_Trip1, button);
+                    break;
+                case "bus_Info1":
+                    showUserControl(bus_Info1, button);
+                    break;
+            }
+
         }
 
-        private void btnAvailable_Click(object sender, EventArgs e)
-        {
-            showUserControl(available_Trip1, btnAvailable);
-        }
     }
 }

@@ -37,6 +37,12 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -78,6 +84,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseFunctions.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +98,12 @@
     </Compile>
     <Compile Include="User_Controls\Available_Trip.Designer.cs">
       <DependentUpon>Available_Trip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Bus_Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Bus_Info.Designer.cs">
+      <DependentUpon>Bus_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\User_Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -116,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="User_Controls\Available_Trip.resx">
       <DependentUpon>Available_Trip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Bus_Info.resx">
+      <DependentUpon>Bus_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\User_Dashboard.resx">
       <DependentUpon>User_Dashboard.cs</DependentUpon>
