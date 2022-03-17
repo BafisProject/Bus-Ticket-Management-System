@@ -84,5 +84,10 @@ namespace BusTicketManagementSystem
 
         }
 
+        private void Dashboard_Activated(object sender, EventArgs e)
+        {
+            //Refreshing Bus Info Panel
+            bus_Info1.showAllBus();
+        }
     }
 }

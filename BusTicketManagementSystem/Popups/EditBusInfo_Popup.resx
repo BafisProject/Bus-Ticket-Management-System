@@ -117,47 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Column5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAUNJREFUSEvd
-        ld1Rw0AMhFUCJVACJdFJ6CB5I/ASd5B0kHQAHZAOSAfHytmz7kdnzpnJA3wzOx5LK/n+5iz/j/AuT2Er
-        O+grvEnoknq15lUe2cYHhme3wRKhB9vljCP3Cm6RNxMkhso4p60c8NSaSxa/amBbA8FzYWrporNlmYSd
-        POBjn5kHe8K0kRnmlDSPjB8pZsKUkSYbujZonBSMepP6GTbSpKNxWfDUNd+zJIN7MtUwbKTJQtOaJ0ux
-        GouIdwKZMkoDlW2owmb6kb0uF9+/6Z9Eu1EaoKp5hDOZPda0GpWp0TzSGnkUbUZmwLlm2OW35ipajcJw
-        Yriip7mKdqMwvDCc0dtcxRIDwfSqqO6SJc2hM8sMBMtTsYZW2I8jnh9JvEfOZadn2jcvV+vHg8T9fjgR
-        zkSXq/f6Vql3aI78DyPyA/ZWM3I8xeiZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="deleteColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="deleteColumn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASZJREFUSEvV
-        VMFtAjEQvBIoIc8IxRYdJB0kJaSEdQVQAiVQQjpISqAD+J4P6egAPMeirDZ7trlHSEaaz3pm1mfvubk7
-        +gXNOk/L6OhTEjWssWw6ogtf0YeTxdaFD5ZNhxUsybJpSMdAVqhk90QvLM9jCMP5GiE38XJH7xz7DRRx
-        3q2n1ZXYXYnwXfWpwXq4M6uBRJzTonPh+RbCw/Y8as59lKWdA/ypdkCB8HLMOP5/g4OjN2U8oqanh3VH
-        qUWNY8YxjJ4wRU/9wYVXPTWoYU1q4eWYcfxsUM+/0aB/pAdtbH3YwyyJmtbByzF5aGOajp2+A9S0ju1l
-        aGMt2V6GZa4h28tIL+LWCsgyvaJsL8P42Yqs+skkMClpV5vL+57lBlq2/Taa5gyif9tEzWdH8wAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
   <data name="btnAddBus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKUAAAAkCAYAAADox/qnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -170,16 +130,10 @@
         QmCC
 </value>
   </data>
-  <data name="busNumberTextBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKUAAAAjCAYAAAD1wsofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFKSURBVHhe7dwhUgQxEEDRSCSGqkkixiLXMBPWwBE4AhK5
-        ciWOIyA5BkfgKMiVSOhORSxFIydp8VP1VDLuV2qzooO1Yry9Tml9zHF9BragfaW037Xk/l96ME7rKafy
-        DfQQp+VLIj22BH+vlJZ36yOghxjLxzzfXbQcNcjyZB0EepIOX1qS8htSr1DjENDbfHUzyS2531mbwAjy
-        yH4IOZaDtQkMIS9ziVKe6NYmMAJRwh2ihDtECXeIEu4QJdwhSrhDlHCHKOEOUcIdooQ7RAl3iBLuECXc
-        IUq4Q5RwhyjhDlHCHaKEO0QJd4gS7rQoj+YmMEKNMq/35iYwgM6zCjq/xdoERtCJf3Vsi1yZr9YBoCcd
-        slaD1KW3ZUrl0zoI9KAjKOscofMlYV7mWN6sD4At6Q35J8jzpQOv6mhA/asI2FQ55LyUll5bIfwABg4a
-        dFWuwEEAAAAASUVORK5CYII=
-</value>
-  </data>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
 </root>

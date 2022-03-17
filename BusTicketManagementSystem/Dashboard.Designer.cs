@@ -49,9 +49,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bus_Info1 = new BusTicketManagementSystem.User_Controls.Bus_Info();
             this.available_Trip1 = new BusTicketManagementSystem.User_Controls.Available_Trip();
             this.user_Dashboard1 = new BusTicketManagementSystem.User_Controls.User_Dashboard();
-            this.bus_Info1 = new BusTicketManagementSystem.User_Controls.Bus_Info();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -402,6 +402,16 @@
             this.bunifuDragControl2.TargetControl = this.panel2;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // bus_Info1
+            // 
+            this.bus_Info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.bus_Info1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bus_Info1.Location = new System.Drawing.Point(9, 9);
+            this.bus_Info1.Margin = new System.Windows.Forms.Padding(5);
+            this.bus_Info1.Name = "bus_Info1";
+            this.bus_Info1.Size = new System.Drawing.Size(977, 626);
+            this.bus_Info1.TabIndex = 2;
+            // 
             // available_Trip1
             // 
             this.available_Trip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
@@ -423,16 +433,6 @@
             this.user_Dashboard1.Size = new System.Drawing.Size(977, 626);
             this.user_Dashboard1.TabIndex = 0;
             // 
-            // bus_Info1
-            // 
-            this.bus_Info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.bus_Info1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bus_Info1.Location = new System.Drawing.Point(9, 9);
-            this.bus_Info1.Margin = new System.Windows.Forms.Padding(5);
-            this.bus_Info1.Name = "bus_Info1";
-            this.bus_Info1.Size = new System.Drawing.Size(977, 626);
-            this.bus_Info1.TabIndex = 2;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -447,6 +447,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Activated += new System.EventHandler(this.Dashboard_Activated);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

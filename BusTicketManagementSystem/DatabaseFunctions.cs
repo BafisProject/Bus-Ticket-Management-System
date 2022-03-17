@@ -51,7 +51,7 @@ namespace BusTicketManagementSystem
                 cmd.ExecuteNonQuery();
             }catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
