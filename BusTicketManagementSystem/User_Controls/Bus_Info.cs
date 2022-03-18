@@ -73,11 +73,7 @@ namespace BusTicketManagementSystem.User_Controls
         public void showAllBus()
         {
             var reader = db.GetData("SELECT * FROM Bus");
-            busInfoGrid.Rows.Clear();
-            while (reader.Read())
-            {
-                busInfoGrid.Rows.Add(reader["bus_number"], reader["bus_class"], reader["bus_status"]);
-            }
+            populateGrid(reader);
         }
   
         private void busInfoGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -92,8 +88,30 @@ namespace BusTicketManagementSystem.User_Controls
                     MessageBox.Show("Data Deleted Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+            if(busInfoGrid.Columns[e.ColumnIndex].Name == "editColumn")
+            {
+                string selectedBusNumber = busInfoGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string selectedBusClass = busInfoGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string selectedBusStatus = busInfoGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                Popups.EditBusInfo_Popup editBusInfo_Popup = new Popups.EditBusInfo_Popup(selectedBusNumber, selectedBusClass, selectedBusStatus);
+                editBusInfo_Popup.ShowDialog();
+            }
         }
 
-        
+        private void searchBoxEvenet(object sender, EventArgs e)
+        {
+            var reader = db.GetData("SELECT * FROM Bus WHERE bus_number LIKE '"+searchBox.Text+"%'");
+            populateGrid(reader);
+        }
+
+        private void populateGrid(SqlDataReader reader)
+        {
+            busInfoGrid.Rows.Clear();
+            while (reader.Read())
+            {
+                busInfoGrid.Rows.Add(reader["bus_number"], reader["bus_class"], reader["bus_status"]);
+            }
+        }
     }
 }

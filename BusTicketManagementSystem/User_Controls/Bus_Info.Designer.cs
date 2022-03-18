@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -40,6 +40,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bus_Info));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.busNumberTextBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -51,12 +55,15 @@
             this.btnAddBus = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.busInfoGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.deleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.busInfoGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -93,32 +100,32 @@
             this.busNumberTextBox.IconRight = null;
             this.busNumberTextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.busNumberTextBox.Lines = new string[0];
-            this.busNumberTextBox.Location = new System.Drawing.Point(128, 68);
+            this.busNumberTextBox.Location = new System.Drawing.Point(128, 55);
             this.busNumberTextBox.MaxLength = 32767;
             this.busNumberTextBox.MinimumSize = new System.Drawing.Size(100, 35);
             this.busNumberTextBox.Modified = false;
             this.busNumberTextBox.Multiline = false;
             this.busNumberTextBox.Name = "busNumberTextBox";
-            stateProperties3.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.busNumberTextBox.OnActiveState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Empty;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.busNumberTextBox.OnDisabledState = stateProperties4;
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.busNumberTextBox.OnHoverState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
-            stateProperties6.ForeColor = System.Drawing.Color.White;
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.busNumberTextBox.OnIdleState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.busNumberTextBox.OnActiveState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Empty;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.busNumberTextBox.OnDisabledState = stateProperties8;
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.busNumberTextBox.OnHoverState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            stateProperties10.ForeColor = System.Drawing.Color.White;
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.busNumberTextBox.OnIdleState = stateProperties10;
             this.busNumberTextBox.PasswordChar = '\0';
             this.busNumberTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(129)))), ((int)(((byte)(145)))));
             this.busNumberTextBox.PlaceholderText = "";
@@ -158,7 +165,7 @@
             "Economy",
             "Business (AC)"});
             this.busClassComboBox.ItemsAppearance.Parent = this.busClassComboBox;
-            this.busClassComboBox.Location = new System.Drawing.Point(314, 68);
+            this.busClassComboBox.Location = new System.Drawing.Point(314, 55);
             this.busClassComboBox.Name = "busClassComboBox";
             this.busClassComboBox.ShadowDecoration.Parent = this.busClassComboBox;
             this.busClassComboBox.Size = new System.Drawing.Size(165, 36);
@@ -170,7 +177,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label2.Location = new System.Drawing.Point(125, 38);
+            this.label2.Location = new System.Drawing.Point(125, 25);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label2.Size = new System.Drawing.Size(94, 15);
@@ -182,7 +189,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label1.Location = new System.Drawing.Point(311, 38);
+            this.label1.Location = new System.Drawing.Point(311, 25);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(75, 15);
@@ -208,7 +215,7 @@
             "Available",
             "Departed"});
             this.busStatusComboBox.ItemsAppearance.Parent = this.busStatusComboBox;
-            this.busStatusComboBox.Location = new System.Drawing.Point(500, 68);
+            this.busStatusComboBox.Location = new System.Drawing.Point(500, 55);
             this.busStatusComboBox.Name = "busStatusComboBox";
             this.busStatusComboBox.ShadowDecoration.Parent = this.busStatusComboBox;
             this.busStatusComboBox.Size = new System.Drawing.Size(165, 36);
@@ -220,7 +227,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label3.Location = new System.Drawing.Point(497, 38);
+            this.label3.Location = new System.Drawing.Point(497, 25);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(83, 15);
@@ -264,7 +271,7 @@
             this.btnAddBus.IdleIconLeftImage = null;
             this.btnAddBus.IdleIconRightImage = null;
             this.btnAddBus.IndicateFocus = false;
-            this.btnAddBus.Location = new System.Drawing.Point(686, 68);
+            this.btnAddBus.Location = new System.Drawing.Point(686, 55);
             this.btnAddBus.Name = "btnAddBus";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties1.BorderRadius = 10;
@@ -317,7 +324,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
+            this.editColumn,
             this.deleteColumn});
             this.busInfoGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.busInfoGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -349,7 +356,7 @@
             this.busInfoGrid.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
             this.busInfoGrid.HeaderBgColor = System.Drawing.Color.Empty;
             this.busInfoGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.busInfoGrid.Location = new System.Drawing.Point(127, 130);
+            this.busInfoGrid.Location = new System.Drawing.Point(128, 159);
             this.busInfoGrid.MultiSelect = false;
             this.busInfoGrid.Name = "busInfoGrid";
             this.busInfoGrid.ReadOnly = true;
@@ -366,17 +373,105 @@
             this.busInfoGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.busInfoGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.busInfoGrid.ShowEditingIcon = false;
-            this.busInfoGrid.Size = new System.Drawing.Size(723, 458);
+            this.busInfoGrid.Size = new System.Drawing.Size(723, 435);
             this.busInfoGrid.TabIndex = 7;
             this.busInfoGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.busInfoGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.busInfoGrid_CellClick);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(833, 130);
+            this.panel1.Location = new System.Drawing.Point(834, 159);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 458);
+            this.panel1.Size = new System.Drawing.Size(100, 435);
             this.panel1.TabIndex = 8;
+            // 
+            // searchBox
+            // 
+            this.searchBox.AcceptsReturn = false;
+            this.searchBox.AcceptsTab = false;
+            this.searchBox.AnimationSpeed = 200;
+            this.searchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.searchBox.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.searchBox.BackColor = System.Drawing.Color.Transparent;
+            this.searchBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchBox.BackgroundImage")));
+            this.searchBox.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.searchBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.searchBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.searchBox.BorderColorIdle = System.Drawing.Color.Transparent;
+            this.searchBox.BorderRadius = 12;
+            this.searchBox.BorderThickness = 0;
+            this.searchBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.DefaultFont = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.searchBox.DefaultText = "";
+            this.searchBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            this.searchBox.ForeColor = System.Drawing.Color.White;
+            this.searchBox.HideSelection = true;
+            this.searchBox.IconLeft = null;
+            this.searchBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchBox.IconPadding = 10;
+            this.searchBox.IconRight = null;
+            this.searchBox.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBox.Lines = new string[0];
+            this.searchBox.Location = new System.Drawing.Point(128, 118);
+            this.searchBox.MaxLength = 32767;
+            this.searchBox.MinimumSize = new System.Drawing.Size(100, 35);
+            this.searchBox.Modified = false;
+            this.searchBox.Multiline = false;
+            this.searchBox.Name = "searchBox";
+            stateProperties3.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchBox.OnActiveState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Empty;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.searchBox.OnDisabledState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchBox.OnHoverState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            stateProperties6.ForeColor = System.Drawing.Color.White;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchBox.OnIdleState = stateProperties6;
+            this.searchBox.PasswordChar = '\0';
+            this.searchBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(129)))), ((int)(((byte)(145)))));
+            this.searchBox.PlaceholderText = "Search by Bus Number...";
+            this.searchBox.ReadOnly = false;
+            this.searchBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.searchBox.SelectedText = "";
+            this.searchBox.SelectionLength = 0;
+            this.searchBox.SelectionStart = 0;
+            this.searchBox.ShortcutsEnabled = true;
+            this.searchBox.Size = new System.Drawing.Size(215, 35);
+            this.searchBox.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.searchBox.TabIndex = 1;
+            this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.searchBox.TextMarginBottom = 0;
+            this.searchBox.TextMarginLeft = 5;
+            this.searchBox.TextMarginTop = 0;
+            this.searchBox.TextPlaceholder = "Search by Bus Number...";
+            this.searchBox.UseSystemPasswordChar = false;
+            this.searchBox.WordWrap = true;
+            this.searchBox.TextChange += new System.EventHandler(this.searchBoxEvenet);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(358, 118);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(39, 35);
+            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.searchBoxEvenet);
             // 
             // Column2
             // 
@@ -408,17 +503,17 @@
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Column5
+            // editColumn
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.FillWeight = 152.2843F;
-            this.Column5.HeaderText = "";
-            this.Column5.Image = ((System.Drawing.Image)(resources.GetObject("Column5.Image")));
-            this.Column5.MinimumWidth = 50;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.Width = 50;
+            this.editColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editColumn.FillWeight = 152.2843F;
+            this.editColumn.HeaderText = "";
+            this.editColumn.Image = ((System.Drawing.Image)(resources.GetObject("editColumn.Image")));
+            this.editColumn.MinimumWidth = 50;
+            this.editColumn.Name = "editColumn";
+            this.editColumn.ReadOnly = true;
+            this.editColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editColumn.Width = 50;
             // 
             // deleteColumn
             // 
@@ -437,6 +532,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.busInfoGrid);
             this.Controls.Add(this.btnAddBus);
@@ -445,6 +541,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.busStatusComboBox);
             this.Controls.Add(this.busClassComboBox);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.busNumberTextBox);
             this.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -452,6 +549,7 @@
             this.Size = new System.Drawing.Size(977, 626);
             this.Load += new System.EventHandler(this.Bus_Info_Load);
             ((System.ComponentModel.ISupportInitialize)(this.busInfoGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,10 +567,12 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddBus;
         private Bunifu.UI.WinForms.BunifuDataGridView busInfoGrid;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox searchBox;
+        private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewImageColumn Column5;
+        private System.Windows.Forms.DataGridViewImageColumn editColumn;
         private System.Windows.Forms.DataGridViewImageColumn deleteColumn;
     }
 }
