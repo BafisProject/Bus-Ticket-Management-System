@@ -64,18 +64,6 @@ namespace BusTicketManagementSystem.User_Controls
         {
             var reader = db.GetData("SELECT * FROM Bus");
             populateGrid(reader);
-            //Checking if the scrollBar Exist
-            foreach (var scroll in busInfoGrid.Controls.OfType<VScrollBar>())
-            {
-                if (scroll.Visible)
-                {
-                    panel1.Visible = true;
-                }
-                else
-                {
-                    panel1.Visible = false;
-                }
-            }
         }
         
 
