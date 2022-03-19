@@ -88,6 +88,8 @@ namespace BusTicketManagementSystem
         {
             //Refreshing Bus Info Panel
             bus_Info1.showAllBus();
+            //Refreshing Trip Available Panel
+            available_Trip1.showAllTrip();
         }
     }
 }

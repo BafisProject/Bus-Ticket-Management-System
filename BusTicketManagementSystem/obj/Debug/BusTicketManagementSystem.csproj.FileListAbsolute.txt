@@ -35,3 +35,6 @@ C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementS
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.xml
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.Popups.EditBusInfo_Popup.resources
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.Popups.EditTripInfo_Popup.resources

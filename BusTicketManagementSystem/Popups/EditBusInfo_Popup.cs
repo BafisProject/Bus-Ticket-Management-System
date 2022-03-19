@@ -50,9 +50,6 @@ namespace BusTicketManagementSystem.Popups
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Dashboard dashboard = new Dashboard();
-            //dashboard.Activate();
-            dashboard.Show();
         }
     }
 }

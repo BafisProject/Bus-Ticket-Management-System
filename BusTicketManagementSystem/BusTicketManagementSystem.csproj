@@ -40,6 +40,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>..\..\..\..\Desktop\Bunifu_UI_WinForms_1.11.5.1\Bunifu_UI_WinForms_1.11.5.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
@@ -101,6 +104,12 @@
     <Compile Include="Popups\EditBusInfo_Popup.Designer.cs">
       <DependentUpon>EditBusInfo_Popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\EditTripInfo_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\EditTripInfo_Popup.Designer.cs">
+      <DependentUpon>EditTripInfo_Popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User_Controls\Available_Trip.cs">
@@ -129,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\EditBusInfo_Popup.resx">
       <DependentUpon>EditBusInfo_Popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\EditTripInfo_Popup.resx">
+      <DependentUpon>EditTripInfo_Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

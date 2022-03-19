@@ -54,14 +54,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddBus = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.busInfoGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.deleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.busInfoGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
@@ -213,7 +213,9 @@
             this.busStatusComboBox.ItemHeight = 30;
             this.busStatusComboBox.Items.AddRange(new object[] {
             "Available",
-            "Departed"});
+            "Reserved",
+            "Departed",
+            "Malfunction"});
             this.busStatusComboBox.ItemsAppearance.Parent = this.busStatusComboBox;
             this.busStatusComboBox.Location = new System.Drawing.Point(500, 55);
             this.busStatusComboBox.Name = "busStatusComboBox";
@@ -378,12 +380,67 @@
             this.busInfoGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.busInfoGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.busInfoGrid_CellClick);
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "bus_number";
+            this.Column2.FillWeight = 89.54315F;
+            this.Column2.HeaderText = "BUS NUMBER";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "bus_class";
+            this.Column3.FillWeight = 89.54315F;
+            this.Column3.HeaderText = "BUS CLASS";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "bus_status";
+            this.Column4.FillWeight = 89.54315F;
+            this.Column4.HeaderText = "BUS STATUS";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // editColumn
+            // 
+            this.editColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editColumn.FillWeight = 152.2843F;
+            this.editColumn.HeaderText = "";
+            this.editColumn.Image = ((System.Drawing.Image)(resources.GetObject("editColumn.Image")));
+            this.editColumn.MinimumWidth = 50;
+            this.editColumn.Name = "editColumn";
+            this.editColumn.ReadOnly = true;
+            this.editColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editColumn.Width = 50;
+            // 
+            // deleteColumn
+            // 
+            this.deleteColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.deleteColumn.FillWeight = 89.54315F;
+            this.deleteColumn.HeaderText = "";
+            this.deleteColumn.Image = ((System.Drawing.Image)(resources.GetObject("deleteColumn.Image")));
+            this.deleteColumn.MinimumWidth = 50;
+            this.deleteColumn.Name = "deleteColumn";
+            this.deleteColumn.ReadOnly = true;
+            this.deleteColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.deleteColumn.Width = 50;
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(834, 159);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 435);
             this.panel1.TabIndex = 8;
+            this.panel1.Visible = false;
             // 
             // searchBox
             // 
@@ -472,60 +529,6 @@
             this.btnSearch.TabIndex = 9;
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.searchBoxEvenet);
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "bus_number";
-            this.Column2.FillWeight = 89.54315F;
-            this.Column2.HeaderText = "BUS NUMBER";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "bus_class";
-            this.Column3.FillWeight = 89.54315F;
-            this.Column3.HeaderText = "BUS CLASS";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "bus_status";
-            this.Column4.FillWeight = 89.54315F;
-            this.Column4.HeaderText = "BUS STATUS";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // editColumn
-            // 
-            this.editColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.editColumn.FillWeight = 152.2843F;
-            this.editColumn.HeaderText = "";
-            this.editColumn.Image = ((System.Drawing.Image)(resources.GetObject("editColumn.Image")));
-            this.editColumn.MinimumWidth = 50;
-            this.editColumn.Name = "editColumn";
-            this.editColumn.ReadOnly = true;
-            this.editColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.editColumn.Width = 50;
-            // 
-            // deleteColumn
-            // 
-            this.deleteColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.deleteColumn.FillWeight = 89.54315F;
-            this.deleteColumn.HeaderText = "";
-            this.deleteColumn.Image = ((System.Drawing.Image)(resources.GetObject("deleteColumn.Image")));
-            this.deleteColumn.MinimumWidth = 50;
-            this.deleteColumn.Name = "deleteColumn";
-            this.deleteColumn.ReadOnly = true;
-            this.deleteColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.deleteColumn.Width = 50;
             // 
             // Bus_Info
             // 
