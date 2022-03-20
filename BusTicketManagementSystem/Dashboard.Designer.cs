@@ -47,11 +47,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bus_Info1 = new BusTicketManagementSystem.User_Controls.Bus_Info();
             this.available_Trip1 = new BusTicketManagementSystem.User_Controls.Available_Trip();
             this.user_Dashboard1 = new BusTicketManagementSystem.User_Controls.User_Dashboard();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.closeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -379,6 +381,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.closeBtn);
+            this.panel2.Controls.Add(this.btnMinimize);
             this.panel2.Controls.Add(this.bus_Info1);
             this.panel2.Controls.Add(this.available_Trip1);
             this.panel2.Controls.Add(this.user_Dashboard1);
@@ -387,20 +391,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 645);
             this.panel2.TabIndex = 1;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.panel2;
-            this.bunifuDragControl2.Vertical = true;
             // 
             // bus_Info1
             // 
@@ -432,6 +422,58 @@
             this.user_Dashboard1.Name = "user_Dashboard1";
             this.user_Dashboard1.Size = new System.Drawing.Size(977, 626);
             this.user_Dashboard1.TabIndex = 0;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel2;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.closeBtn.CheckedState.Parent = this.closeBtn;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.CustomImages.Parent = this.closeBtn;
+            this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
+            this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
+            this.closeBtn.HoverState.Parent = this.closeBtn;
+            this.closeBtn.Location = new System.Drawing.Point(954, 18);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.closeBtn.ShadowDecoration.Parent = this.closeBtn;
+            this.closeBtn.Size = new System.Drawing.Size(18, 18);
+            this.closeBtn.TabIndex = 8;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.btnMinimize.CheckedState.Parent = this.btnMinimize;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.CustomImages.Parent = this.btnMinimize;
+            this.btnMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
+            this.btnMinimize.HoverState.Parent = this.btnMinimize;
+            this.btnMinimize.Location = new System.Drawing.Point(930, 18);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnMinimize.ShadowDecoration.Parent = this.btnMinimize;
+            this.btnMinimize.Size = new System.Drawing.Size(18, 18);
+            this.btnMinimize.TabIndex = 7;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // Dashboard
             // 
@@ -481,5 +523,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnBusInfo;
         private User_Controls.Bus_Info bus_Info1;
+        private Guna.UI2.WinForms.Guna2CircleButton closeBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton btnMinimize;
     }
 }

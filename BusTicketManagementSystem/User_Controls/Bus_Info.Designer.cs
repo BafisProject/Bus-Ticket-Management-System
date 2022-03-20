@@ -50,8 +50,6 @@
             this.busClassComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.busStatusComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnAddBus = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.busInfoGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +60,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchBox = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.busInfoGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +134,7 @@
             this.busNumberTextBox.SelectionLength = 0;
             this.busNumberTextBox.SelectionStart = 0;
             this.busNumberTextBox.ShortcutsEnabled = true;
-            this.busNumberTextBox.Size = new System.Drawing.Size(165, 35);
+            this.busNumberTextBox.Size = new System.Drawing.Size(215, 35);
             this.busNumberTextBox.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.busNumberTextBox.TabIndex = 1;
             this.busNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -165,10 +164,10 @@
             "Economy",
             "Business (AC)"});
             this.busClassComboBox.ItemsAppearance.Parent = this.busClassComboBox;
-            this.busClassComboBox.Location = new System.Drawing.Point(314, 55);
+            this.busClassComboBox.Location = new System.Drawing.Point(382, 55);
             this.busClassComboBox.Name = "busClassComboBox";
             this.busClassComboBox.ShadowDecoration.Parent = this.busClassComboBox;
-            this.busClassComboBox.Size = new System.Drawing.Size(165, 36);
+            this.busClassComboBox.Size = new System.Drawing.Size(215, 36);
             this.busClassComboBox.TabIndex = 2;
             this.busClassComboBox.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -189,52 +188,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label1.Location = new System.Drawing.Point(311, 25);
+            this.label1.Location = new System.Drawing.Point(379, 25);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(75, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "Bus Class";
-            // 
-            // busStatusComboBox
-            // 
-            this.busStatusComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.busStatusComboBox.BorderRadius = 6;
-            this.busStatusComboBox.BorderThickness = 0;
-            this.busStatusComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.busStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.busStatusComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
-            this.busStatusComboBox.FocusedColor = System.Drawing.Color.Empty;
-            this.busStatusComboBox.FocusedState.Parent = this.busStatusComboBox;
-            this.busStatusComboBox.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
-            this.busStatusComboBox.ForeColor = System.Drawing.Color.White;
-            this.busStatusComboBox.FormattingEnabled = true;
-            this.busStatusComboBox.HoverState.Parent = this.busStatusComboBox;
-            this.busStatusComboBox.ItemHeight = 30;
-            this.busStatusComboBox.Items.AddRange(new object[] {
-            "Available",
-            "Reserved",
-            "Departed",
-            "Malfunction"});
-            this.busStatusComboBox.ItemsAppearance.Parent = this.busStatusComboBox;
-            this.busStatusComboBox.Location = new System.Drawing.Point(500, 55);
-            this.busStatusComboBox.Name = "busStatusComboBox";
-            this.busStatusComboBox.ShadowDecoration.Parent = this.busStatusComboBox;
-            this.busStatusComboBox.Size = new System.Drawing.Size(165, 36);
-            this.busStatusComboBox.TabIndex = 2;
-            this.busStatusComboBox.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label3.Location = new System.Drawing.Point(497, 25);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(83, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Bus Status";
             // 
             // btnAddBus
             // 
@@ -273,7 +232,7 @@
             this.btnAddBus.IdleIconLeftImage = null;
             this.btnAddBus.IdleIconRightImage = null;
             this.btnAddBus.IndicateFocus = false;
-            this.btnAddBus.Location = new System.Drawing.Point(686, 55);
+            this.btnAddBus.Location = new System.Drawing.Point(636, 55);
             this.btnAddBus.Name = "btnAddBus";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties1.BorderRadius = 10;
@@ -293,7 +252,7 @@
             stateProperties2.IconLeftImage = null;
             stateProperties2.IconRightImage = null;
             this.btnAddBus.OnPressedState = stateProperties2;
-            this.btnAddBus.Size = new System.Drawing.Size(165, 36);
+            this.btnAddBus.Size = new System.Drawing.Size(215, 36);
             this.btnAddBus.TabIndex = 6;
             this.btnAddBus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddBus.TextMarginLeft = 0;
@@ -529,6 +488,13 @@
             this.btnSearch.TabStop = false;
             this.btnSearch.Click += new System.EventHandler(this.searchBoxEvenet);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // Bus_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -538,10 +504,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.busInfoGrid);
             this.Controls.Add(this.btnAddBus);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.busStatusComboBox);
             this.Controls.Add(this.busClassComboBox);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.busNumberTextBox);
@@ -562,10 +526,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox busNumberTextBox;
         private Guna.UI2.WinForms.Guna2ComboBox busClassComboBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ComboBox busStatusComboBox;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddBus;
         private Bunifu.UI.WinForms.BunifuDataGridView busInfoGrid;
         private System.Windows.Forms.Panel panel1;
@@ -576,5 +538,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn editColumn;
         private System.Windows.Forms.DataGridViewImageColumn deleteColumn;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

@@ -35,14 +35,14 @@ namespace BusTicketManagementSystem.User_Controls
             }
             else
             {
-                //Before inserting checking Bus Number as it is Foreign Key
+                //Before inserting checking Bus Number if that is exist in Bus Table
                 var reader = db.GetData("SELECT * FROM Bus");
                 while (reader.Read())
                 {
                     if(busNumber == reader["bus_number"].ToString())
                     {
                         //If bus number found then will look for availability
-                        if (reader["bus_status"].ToString() == "Available")
+                        if (reader["bus_status"].ToString() == "Available" || reader["bus_status"].ToString() == "Reserved")
                         {
                             busAvailability = true;
                             break;
@@ -51,12 +51,13 @@ namespace BusTicketManagementSystem.User_Controls
                         {
                             break;
                         }
-                    }
-                    
+                    }                   
                 }
 
+                //BUS Number Found and also Bus is Available
                 if(busAvailability == true)
                 {
+                    //IF bus available then it will check if any trip is already booked with the given value
                     var reader2 = db.GetData("SELECT * FROM Trip");
                     string dbDestination = "", dbBusNumber, dbDepartDate;
                     DateTime dbDepartTime;
@@ -80,15 +81,17 @@ namespace BusTicketManagementSystem.User_Controls
                     }
                     else if (DateTime.Parse(departDate, CultureInfo.InvariantCulture) == DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"), CultureInfo.InvariantCulture))
                     {
+                        // Crrent date == Input date [checking if the time is valid]
                         if (DateTime.Parse(departTime, CultureInfo.InvariantCulture) < DateTime.Parse(DateTime.Now.ToString("hh:mm tt"), CultureInfo.InvariantCulture))
                         {
                             MessageBox.Show("Invalid Time Selection", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        else
+                        else 
                         {
                             if(tripExist == false)
                             {
                                 db.SetData("INSERT INTO Trip VALUES('" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
+                                db.SetData("UPDATE Bus SET bus_status = 'Reserved' WHERE bus_number = '" + busNumber + "'");
                                 destinationComboBox.SelectedIndex = -1;
                                 busNumberText.Text = "";
                                 MessageBox.Show("Trip Added Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -104,20 +107,21 @@ namespace BusTicketManagementSystem.User_Controls
                         if (tripExist == false)
                         {
                             db.SetData("INSERT INTO Trip VALUES('" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
+                            db.SetData("UPDATE Bus SET bus_status = 'Reserved' WHERE bus_number = '" + busNumber + "'");
                             destinationComboBox.SelectedIndex = -1;
                             busNumberText.Text = "";
                             MessageBox.Show("Trip Added Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Trip Alredy Exist" + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Trip Alredy Exist in " + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     
                 }
                 else if(busAvailability == false)
                 {
-                    MessageBox.Show("Bus Already Departed", "DEPARTED", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Bus not Exist or Departed already", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -140,10 +144,26 @@ namespace BusTicketManagementSystem.User_Controls
             if (tripGrid.Columns[e.ColumnIndex].Name == "deleteColumn")
             {
                 int selectedID = Convert.ToInt32(tripGrid.Rows[e.RowIndex].Cells[0].Value);
+                string selectedBusNumber = tripGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                bool busStillAssigned = false;
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete?", "DATA DELETION WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
                     db.SetData("DELETE FROM Trip WHERE trip_ID = '" + selectedID + "'");
+                    var helper = db.GetData("SELECT bus_number FROM Trip");
+                    while (helper.Read())
+                    {
+                        if(selectedBusNumber == helper["bus_number"].ToString())
+                        {
+                            busStillAssigned = true;
+                            break;
+                        }
+                    }
+
+                    if(busStillAssigned == false)
+                    {
+                        db.SetData("UPDATE Bus SET bus_status = 'Available' WHERE bus_number = '"+selectedBusNumber+"'");
+                    }
                     MessageBox.Show("Data Deleted Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -155,7 +175,8 @@ namespace BusTicketManagementSystem.User_Controls
                 string selectedDestination = tripGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string selectedTime = tripGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string selectedDate = tripGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-                Popups.EditTripInfo_Popup editTripInfo_Popup = new Popups.EditTripInfo_Popup(selectedID, selectedDestination, selectedTime, selectedDate);
+                string selectedBusNumber = tripGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                Popups.EditTripInfo_Popup editTripInfo_Popup = new Popups.EditTripInfo_Popup(selectedID, selectedDestination, selectedTime, selectedDate, selectedBusNumber);
                 editTripInfo_Popup.ShowDialog();
             }
         }
@@ -171,6 +192,7 @@ namespace BusTicketManagementSystem.User_Controls
         public void populateGrid(SqlDataReader reader)
         {
             string date;
+            bool stillReserved = false;
             DateTime time;
             tripGrid.Rows.Clear();
             while (reader.Read())
@@ -180,14 +202,38 @@ namespace BusTicketManagementSystem.User_Controls
                 if (DateTime.Parse(date, CultureInfo.InvariantCulture) < DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"), CultureInfo.InvariantCulture))
                 {
                     db.SetData("DELETE FROM Trip WHERE trip_ID ='"+ reader["trip_ID"] + "'");
-                    db.SetData("UPDATE Bus SET bus_status = 'Departed' WHERE bus_number = '" + reader["bus_number"].ToString() + "'");
+                    //Checking if still this bus assigned to any trip
+                    var helper = db.GetData("SELECT bus_number FROM Trip");
+                    while (helper.Read())
+                    {
+                        if(helper["bus_number"].ToString() == reader["bus_number"].ToString())
+                        {
+                            stillReserved = true;        
+                        }
+                    }
+                    if(stillReserved == false)
+                    {
+                        db.SetData("UPDATE Bus SET bus_status = 'Departed' WHERE bus_number = '" + reader["bus_number"].ToString() + "'");
+                    }
                 }
                 else if (DateTime.Parse(date, CultureInfo.InvariantCulture) == DateTime.Parse(DateTime.Now.ToString("dd, MMMM, yyyy"), CultureInfo.InvariantCulture))
                 {
                     if (DateTime.Parse(time.ToString("HH:mm:ss"), CultureInfo.InvariantCulture) < DateTime.Parse(DateTime.Now.ToString("HH:mm:ss"), CultureInfo.InvariantCulture))
                     {
                         db.SetData("DELETE FROM Trip WHERE trip_ID ='" + reader["trip_ID"] + "'");
-                        db.SetData("UPDATE Bus SET bus_status = 'Departed' WHERE bus_number = '" + reader["bus_number"].ToString() + "'");
+                        //Checking if still this bus assigned to any trip
+                        var helper = db.GetData("SELECT bus_number FROM Trip");
+                        while (helper.Read())
+                        {
+                            if (helper["bus_number"].ToString() == reader["bus_number"].ToString())
+                            {
+                                stillReserved = true;
+                            }
+                        }
+                        if (stillReserved == false)
+                        {
+                            db.SetData("UPDATE Bus SET bus_status = 'Departed' WHERE bus_number = '" + reader["bus_number"].ToString() + "'");
+                        }
                     }
                     else
                     {

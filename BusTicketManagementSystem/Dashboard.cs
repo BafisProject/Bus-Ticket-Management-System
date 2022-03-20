@@ -46,7 +46,7 @@ namespace BusTicketManagementSystem
             uncheckAllButton();
             y.Checked = true;
             x.Visible = true;
-            x.BringToFront();
+            //x.BringToFront();
         }
    
 
@@ -90,6 +90,16 @@ namespace BusTicketManagementSystem
             bus_Info1.showAllBus();
             //Refreshing Trip Available Panel
             available_Trip1.showAllTrip();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

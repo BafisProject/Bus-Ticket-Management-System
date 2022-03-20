@@ -33,10 +33,9 @@ namespace BusTicketManagementSystem.User_Controls
             //Variables to store all the textBox and ComboBox Value
             string busNumber = busNumberTextBox.Text;
             string busClass = busClassComboBox.Text;
-            string busStatus = busStatusComboBox.Text;
 
             //Checking if any field is empty...
-            if (string.IsNullOrEmpty(busNumber) || string.IsNullOrEmpty(busClass) || string.IsNullOrEmpty(busStatus))
+            if (string.IsNullOrEmpty(busNumber) || string.IsNullOrEmpty(busClass))
             {
                 MessageBox.Show("Empty Field", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -49,9 +48,8 @@ namespace BusTicketManagementSystem.User_Controls
                 }
                 else
                 {
-                    db.SetData("INSERT INTO Bus VALUES('" + busNumber + "', '" + busClass + "', '" + busStatus + "')");
+                    db.SetData("INSERT INTO Bus VALUES('" + busNumber + "', '" + busClass + "', 'Available')");
                     busNumberTextBox.Text = "";
-                    busStatusComboBox.SelectedIndex = -1;
                     busClassComboBox.SelectedIndex = -1;
                     MessageBox.Show("Bus Added Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -81,7 +79,7 @@ namespace BusTicketManagementSystem.User_Controls
                     //If bus assigned for a trip delete operation not possible
                     if(busExistance("SELECT bus_number FROM Trip", selectedBusNumber))
                     {
-                        MessageBox.Show("Bus already assigned for a trip", "Can't Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Bus already assigned for a trip", "Unable to delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -101,7 +99,7 @@ namespace BusTicketManagementSystem.User_Controls
                 //If bus assigned for a trip UPDATE operation not possible
                 if (busExistance("SELECT bus_number FROM Trip", selectedBusNumber))
                 {
-                    MessageBox.Show("Bus already assigned for a trip", "Can't Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Bus already assigned for a trip", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -124,7 +122,18 @@ namespace BusTicketManagementSystem.User_Controls
             busInfoGrid.Rows.Clear();
             while (reader.Read())
             {
-                busInfoGrid.Rows.Add(reader["bus_number"], reader["bus_class"], reader["bus_status"]);
+                var helper = db.GetData("SELECT bus_number FROM Trip WHERE bus_number = '" + reader["bus_number"] + "'");
+                string count = "";
+                int i = 0;
+                while (helper.Read())
+                {
+                    i++;
+                }
+                if(i > 0)
+                {
+                    count = " (" + i.ToString() + ")";
+                }
+                busInfoGrid.Rows.Add(reader["bus_number"], reader["bus_class"], reader["bus_status"].ToString() + count);
             }
         }
 
