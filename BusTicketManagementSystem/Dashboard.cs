@@ -15,6 +15,7 @@ namespace BusTicketManagementSystem
 {
     public partial class Dashboard : Form
     {
+      
         public Dashboard()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace BusTicketManagementSystem
             btnDashboard.Checked = false;
             btnAvailable.Checked = false;
             btnBusInfo.Checked = false;
+            btnTicketBooking.Checked = false;
         }
 
         private void hideallUserControl()
@@ -38,6 +40,7 @@ namespace BusTicketManagementSystem
             user_Dashboard1.Visible = false;
             available_Trip1.Visible = false;
             bus_Info1.Visible = false;
+            ticket_booking1.Visible = false;
         }
 
         private void showUserControl(UserControl x, Guna2Button y)
@@ -80,6 +83,9 @@ namespace BusTicketManagementSystem
                 case "bus_Info1":
                     showUserControl(bus_Info1, button);
                     break;
+                case "ticket_booking1":
+                    showUserControl(ticket_booking1, button);
+                    break;
             }
 
         }
@@ -95,11 +101,12 @@ namespace BusTicketManagementSystem
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            this.BringToFront();
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

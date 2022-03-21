@@ -110,6 +110,12 @@
     <Compile Include="Popups\EditTripInfo_Popup.Designer.cs">
       <DependentUpon>EditTripInfo_Popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\Trip_Availability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\Trip_Availability.Designer.cs">
+      <DependentUpon>Trip_Availability.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User_Controls\Available_Trip.cs">
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="User_Controls\Bus_Info.Designer.cs">
       <DependentUpon>Bus_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Ticket_booking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Ticket_booking.Designer.cs">
+      <DependentUpon>Ticket_booking.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\User_Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -142,6 +154,9 @@
     <EmbeddedResource Include="Popups\EditTripInfo_Popup.resx">
       <DependentUpon>EditTripInfo_Popup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popups\Trip_Availability.resx">
+      <DependentUpon>Trip_Availability.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Bus_Info.resx">
       <DependentUpon>Bus_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Ticket_booking.resx">
+      <DependentUpon>Ticket_booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\User_Dashboard.resx">
       <DependentUpon>User_Dashboard.cs</DependentUpon>

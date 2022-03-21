@@ -40,20 +40,21 @@
             this.btnBusInfo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTicketBooking = new Guna.UI2.WinForms.Guna2Button();
             this.btnAvailable = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.closeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.ticket_booking1 = new BusTicketManagementSystem.User_Controls.Ticket_booking();
             this.bus_Info1 = new BusTicketManagementSystem.User_Controls.Bus_Info();
             this.available_Trip1 = new BusTicketManagementSystem.User_Controls.Available_Trip();
             this.user_Dashboard1 = new BusTicketManagementSystem.User_Controls.User_Dashboard();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.closeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,7 +75,7 @@
             this.panel1.Controls.Add(this.btnBusInfo);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.guna2Button4);
-            this.panel1.Controls.Add(this.guna2Button3);
+            this.panel1.Controls.Add(this.btnTicketBooking);
             this.panel1.Controls.Add(this.btnAvailable);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.label1);
@@ -274,28 +275,30 @@
             this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.UseTransparentBackground = true;
             // 
-            // guna2Button3
+            // btnTicketBooking
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 6;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(16, 182);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(148, 37);
-            this.guna2Button3.TabIndex = 4;
-            this.guna2Button3.Text = "Book A Trip";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.UseTransparentBackground = true;
+            this.btnTicketBooking.BackColor = System.Drawing.Color.Transparent;
+            this.btnTicketBooking.BorderRadius = 6;
+            this.btnTicketBooking.CheckedState.Parent = this.btnTicketBooking;
+            this.btnTicketBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTicketBooking.CustomImages.Parent = this.btnTicketBooking;
+            this.btnTicketBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.btnTicketBooking.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicketBooking.ForeColor = System.Drawing.Color.White;
+            this.btnTicketBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
+            this.btnTicketBooking.HoverState.Parent = this.btnTicketBooking;
+            this.btnTicketBooking.Image = ((System.Drawing.Image)(resources.GetObject("btnTicketBooking.Image")));
+            this.btnTicketBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTicketBooking.Location = new System.Drawing.Point(16, 182);
+            this.btnTicketBooking.Name = "btnTicketBooking";
+            this.btnTicketBooking.ShadowDecoration.Parent = this.btnTicketBooking;
+            this.btnTicketBooking.Size = new System.Drawing.Size(148, 37);
+            this.btnTicketBooking.TabIndex = 4;
+            this.btnTicketBooking.Tag = "ticket_booking1";
+            this.btnTicketBooking.Text = "Ticket Booking";
+            this.btnTicketBooking.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTicketBooking.UseTransparentBackground = true;
+            this.btnTicketBooking.Click += new System.EventHandler(this.dashboardSidebarButton_Click);
             // 
             // btnAvailable
             // 
@@ -383,6 +386,7 @@
             // 
             this.panel2.Controls.Add(this.closeBtn);
             this.panel2.Controls.Add(this.btnMinimize);
+            this.panel2.Controls.Add(this.ticket_booking1);
             this.panel2.Controls.Add(this.bus_Info1);
             this.panel2.Controls.Add(this.available_Trip1);
             this.panel2.Controls.Add(this.user_Dashboard1);
@@ -391,6 +395,54 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 645);
             this.panel2.TabIndex = 1;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.closeBtn.CheckedState.Parent = this.closeBtn;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.CustomImages.Parent = this.closeBtn;
+            this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
+            this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.closeBtn.ForeColor = System.Drawing.Color.White;
+            this.closeBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
+            this.closeBtn.HoverState.Parent = this.closeBtn;
+            this.closeBtn.Location = new System.Drawing.Point(954, 18);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.closeBtn.ShadowDecoration.Parent = this.closeBtn;
+            this.closeBtn.Size = new System.Drawing.Size(18, 18);
+            this.closeBtn.TabIndex = 8;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.btnMinimize.CheckedState.Parent = this.btnMinimize;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.CustomImages.Parent = this.btnMinimize;
+            this.btnMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
+            this.btnMinimize.HoverState.Parent = this.btnMinimize;
+            this.btnMinimize.Location = new System.Drawing.Point(930, 18);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnMinimize.ShadowDecoration.Parent = this.btnMinimize;
+            this.btnMinimize.Size = new System.Drawing.Size(18, 18);
+            this.btnMinimize.TabIndex = 7;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // ticket_booking1
+            // 
+            this.ticket_booking1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.ticket_booking1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticket_booking1.Location = new System.Drawing.Point(9, 9);
+            this.ticket_booking1.Margin = new System.Windows.Forms.Padding(5);
+            this.ticket_booking1.Name = "ticket_booking1";
+            this.ticket_booking1.Size = new System.Drawing.Size(977, 626);
+            this.ticket_booking1.TabIndex = 9;
             // 
             // bus_Info1
             // 
@@ -437,44 +489,6 @@
             this.bunifuDragControl2.TargetControl = this.panel2;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // closeBtn
-            // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.closeBtn.CheckedState.Parent = this.closeBtn;
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeBtn.CustomImages.Parent = this.closeBtn;
-            this.closeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
-            this.closeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(97)))), ((int)(((byte)(93)))));
-            this.closeBtn.HoverState.Parent = this.closeBtn;
-            this.closeBtn.Location = new System.Drawing.Point(954, 18);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.closeBtn.ShadowDecoration.Parent = this.closeBtn;
-            this.closeBtn.Size = new System.Drawing.Size(18, 18);
-            this.closeBtn.TabIndex = 8;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.btnMinimize.CheckedState.Parent = this.btnMinimize;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.CustomImages.Parent = this.btnMinimize;
-            this.btnMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(188)))), ((int)(((byte)(64)))));
-            this.btnMinimize.HoverState.Parent = this.btnMinimize;
-            this.btnMinimize.Location = new System.Drawing.Point(930, 18);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnMinimize.ShadowDecoration.Parent = this.btnMinimize;
-            this.btnMinimize.Size = new System.Drawing.Size(18, 18);
-            this.btnMinimize.TabIndex = 7;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -506,7 +520,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Button btnAvailable;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnTicketBooking;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.Label label2;
@@ -525,5 +539,6 @@
         private User_Controls.Bus_Info bus_Info1;
         private Guna.UI2.WinForms.Guna2CircleButton closeBtn;
         private Guna.UI2.WinForms.Guna2CircleButton btnMinimize;
+        public User_Controls.Ticket_booking ticket_booking1;
     }
 }
