@@ -46,7 +46,6 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.bookingFromPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -137,7 +136,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.bookingFromPanel);
             this.panel1.Controls.Add(this.btnCheckNow);
             this.panel1.Controls.Add(this.label2);
@@ -152,16 +150,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 626);
             this.panel1.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(383, 32);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 21);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "label14";
             // 
             // bookingFromPanel
             // 
@@ -827,9 +815,9 @@
             this.label11.Location = new System.Drawing.Point(135, 32);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label11.Size = new System.Drawing.Size(74, 15);
+            this.label11.Size = new System.Drawing.Size(73, 15);
             this.label11.TabIndex = 17;
-            this.label11.Text = "OCCUPIED";
+            this.label11.Text = "RESERVED";
             // 
             // J2
             // 
@@ -1765,7 +1753,6 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Ticket_booking";
             this.Size = new System.Drawing.Size(977, 626);
-            this.Load += new System.EventHandler(this.Ticket_booking_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.bookingFromPanel.ResumeLayout(false);
@@ -1786,7 +1773,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Panel seatDistributionPanel;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox destinatonBox;
         private System.Windows.Forms.DateTimePicker departDate;
@@ -1795,7 +1781,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCheckNow;
-        private System.Windows.Forms.Panel bookingFromPanel;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox loginUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1858,6 +1843,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Panel seatDistributionPanel;
+        public System.Windows.Forms.Panel bookingFromPanel;
     }
 }
