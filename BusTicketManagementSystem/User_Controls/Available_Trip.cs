@@ -201,7 +201,8 @@ namespace BusTicketManagementSystem.User_Controls
                 date = string.Format("{0:dd, MMMM, yyyy}", reader["depart_date"]);
                 if (DateTime.Parse(date, CultureInfo.InvariantCulture) < DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"), CultureInfo.InvariantCulture))
                 {
-                    db.SetData("DELETE FROM Trip WHERE trip_ID ='"+ reader["trip_ID"] + "'");
+                    db.SetData("DELETE FROM Trip WHERE trip_ID ="+ Convert.ToInt32(reader["trip_ID"]) + "");
+                    db.SetData("DELETE FROM Reservation WHERE trip_ID = "+ Convert.ToInt32(reader["trip_ID"]) + "");
                     //Checking if still this bus assigned to any trip
                     var helper = db.GetData("SELECT bus_number FROM Trip");
                     while (helper.Read())
@@ -220,7 +221,8 @@ namespace BusTicketManagementSystem.User_Controls
                 {
                     if (DateTime.Parse(time.ToString("HH:mm:ss"), CultureInfo.InvariantCulture) < DateTime.Parse(DateTime.Now.ToString("HH:mm:ss"), CultureInfo.InvariantCulture))
                     {
-                        db.SetData("DELETE FROM Trip WHERE trip_ID ='" + reader["trip_ID"] + "'");
+                        db.SetData("DELETE FROM Trip WHERE trip_ID =" + Convert.ToInt32(reader["trip_ID"]) + "");
+                        db.SetData("DELETE FROM Reservation WHERE trip_ID = " + Convert.ToInt32(reader["trip_ID"]) + "");
                         //Checking if still this bus assigned to any trip
                         var helper = db.GetData("SELECT bus_number FROM Trip");
                         while (helper.Read())

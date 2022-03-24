@@ -36,7 +36,6 @@ namespace BusTicketManagementSystem.Popups
 
         private void Trip_Availability_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(destination);
             var reader = db.GetData("SELECT * FROM Trip WHERE destination = '"+destination+"' AND depart_date = '"+tripDate+"' AND depart_time = '"+tripTime+"'");
             populateGrid(reader);
         }
@@ -75,10 +74,16 @@ namespace BusTicketManagementSystem.Popups
             if(tripGrid.Columns[e.ColumnIndex].Name == "bookTrip")
             {
                 string selectedTripID = tripGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string selectedCoachClass = tripGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string selectedCoachNumber = tripGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 if(selectedTripID != "")
                 {
                     User_Controls.Ticket_booking.Ticket_booking_Instance.selectedTripNumber = selectedTripID;
+                    User_Controls.Ticket_booking.Ticket_booking_Instance.selectedBusClass = selectedCoachClass;
+                    User_Controls.Ticket_booking.Ticket_booking_Instance.selectedBusNumber = selectedCoachNumber;
+
+                    User_Controls.Ticket_booking.Ticket_booking_Instance.showClassAndPrice();
                     User_Controls.Ticket_booking.Ticket_booking_Instance.showSeats();
                     User_Controls.Ticket_booking.Ticket_booking_Instance.seatDistributionPanel.Visible = true;
                     User_Controls.Ticket_booking.Ticket_booking_Instance.bookingFromPanel.Visible = true;

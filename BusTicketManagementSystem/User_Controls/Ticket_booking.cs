@@ -17,13 +17,20 @@ namespace BusTicketManagementSystem.User_Controls
         public static Ticket_booking Ticket_booking_Instance;
         DatabaseFunctions db = new DatabaseFunctions();
         public string selectedTripNumber = "";
+        public string selectedBusClass = "";
+        public string selectedBusNumber = "";
+        string seatSelection;
+        float totalAmount = 0, perSeatAmount = 0;
 
+        //Constructor
         public Ticket_booking()
         {
             InitializeComponent();
+            //To get the trip_ID from available trip popup
             Ticket_booking_Instance = this;
         }
 
+        //Check available trip on selected time and destination
         private void btnCheckNow_Click(object sender, EventArgs e)
         {
             seatDistributionPanel.Visible = false;
@@ -45,6 +52,7 @@ namespace BusTicketManagementSystem.User_Controls
             }
         }
 
+        //A Function to show all available seats
         public void showSeats()
         {
             string reserved_seat;
@@ -192,23 +200,205 @@ namespace BusTicketManagementSystem.User_Controls
             }
         }
 
+        //Function to make all seats available by default
         private void all_seat_available(Guna2Button[] button)
         {
 
             for (int i = 0; i < button.Length; i++)
             {
                 button[i].Enabled = true;
+                button[i].Checked = false;
+                seatSelection = "";
+                label14.Text = seatSelection;
                 button[i].Cursor = Cursors.Default;
             }
 
         }
 
-        void reserved_status(Guna2Button x)
+        //It will make a seat disabled if it's already reserved
+        void reserved_status(Guna2Button button)
         {
-            x.Enabled = false;
-            x.Cursor = Cursors.No;
+            button.Enabled = false;
+            button.Cursor = Cursors.No;
         }
 
+        // Seat booking complete functionalities
+        private void btnConfirmBooking_Click(object sender, EventArgs e)
+        {
+            string psngName = passengerName.Text;
+            string psngPhone = passengerPhone.Text;
+            bool psngExist = false;
 
+            string passengerID = "";
+
+            if(psngName != "" && psngPhone != "")
+            {
+                //adding passenger to the passenger table
+                //retrieving passenger table infromations
+                var psngReader = db.GetData("SELECT * FROM Passenger");
+                while (psngReader.Read())
+                {
+                    //if this passenger not exist then inseritng it
+                    if(psngName == psngReader["name"].ToString() && psngPhone == psngReader["phone_number"].ToString())
+                    {
+                        psngExist = true;
+                        break;
+                    }
+                }
+
+                //Checking if already passenger exit or null seat selection
+                if (seatSelection != "")
+                {
+                    if (psngExist == false)
+                    {
+                        db.SetData("INSERT INTO Passenger VALUES('" + psngName + "', '" + psngPhone + "')");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid seat selection", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                //retrieving passenger table infromations to get the passenger ID
+                if(seatSelection != "")
+                {
+                    var psngIDReader = db.GetData("SELECT * FROM Passenger WHERE name = '" + psngName + "' AND phone_number = '" + psngPhone + "'");
+                    while (psngIDReader.Read())
+                    {
+                        passengerID = psngIDReader["passenger_ID"].ToString();
+                    }
+                }
+
+                //Inserting Reservation of a passenger to Database
+
+                if(passengerID != "")
+                {
+                    db.SetData("INSERT INTO Reservation VALUES('"+passengerID+"','"+seatSelection+"','"+selectedTripNumber+"')");
+                    var reservationIDReader = db.GetData("SELECT * FROM Reservation WHERE passenger_ID = '" + passengerID + "' AND reserved_seat = '" + seatSelection + "' AND trip_ID = '" + selectedTripNumber + "'");
+                    string reservedID = "";
+                    while (reservationIDReader.Read())
+                    {
+                        reservedID = reservationIDReader["reservation_ID"].ToString();
+                    }
+
+                    //Generating a ticket for the passenger
+                    if(reservedID != "")
+                    {
+                        Random random = new Random();
+                        string ticketNumber = "#(" + selectedBusNumber + ")-" + random.Next(10000, 20000).ToString();
+                        string purchasedTime = DateTime.Now.ToString("hh:mm tt");
+                        string purchasedDate = DateTime.Now.ToString("yyyy-MM-dd");
+                        db.SetData("INSERT INTO Ticket VALUES('"+ticketNumber+"','"+purchasedTime+"','"+purchasedDate+"','"+totalAmount+"','"+reservedID+"')");
+                    }
+
+                    MessageBox.Show("Purchase Completed for " + psngName, "RESERVED SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    passengerName.Text = "";
+                    passengerPhone.Text = "";
+                    showSeats();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill up everything", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //This function will help to generate the selections of seats
+        public void seatBtnToggle(Guna2Button button, string seat_no)
+        {
+            string selectedDestination = destinatonBox.Text;
+            busFare(selectedDestination);
+
+            if (button.Checked == true)
+            {
+                seatSelection += seat_no + ",";  
+                totalAmount += perSeatAmount;               
+            }
+            else
+            {
+                seatSelection = seatSelection.Remove(seatSelection.IndexOf(seat_no), 3);
+                if(totalAmount > 0)
+                {
+                    totalAmount -= perSeatAmount;
+                }
+            }
+        }
+
+        //All seat button click event
+        private void seatClick(object sender, EventArgs e)
+        {
+            Guna2Button button = (Guna2Button)sender;
+            seatBtnToggle(button, button.Text);
+            label14.Text = seatSelection + " " + selectedBusClass;
+            
+            grandTotal.Text = totalAmount.ToString() + " TAKA";
+        }
+
+        //Bus Fare Based on destiantion and Class
+        void busFare(string selectedDestination)
+        {
+            if (selectedBusClass == "Economy")
+            {
+                switch (selectedDestination)
+                {
+                    case "Dhaka":
+                        perSeatAmount = 690;
+                        break;
+                    case "Chattogram":
+                        perSeatAmount = 1050;
+                        break;
+                    case "Barishal":
+                        perSeatAmount = 350;
+                        break;
+                    case "Rajshahi":
+                        perSeatAmount = 700;
+                        break;
+                    case "Sylhet":
+                        perSeatAmount = 1000;
+                        break;
+                    case "Comilla":
+                        perSeatAmount = 950;
+                        break;
+                    case "Rangpur":
+                        perSeatAmount = 800;
+                        break;
+                }
+            }
+            else if (selectedBusClass == "Business (AC)")
+            {
+                switch (selectedDestination)
+                {
+                    case "Dhaka":
+                        perSeatAmount = 1500;
+                        break;
+                    case "Chattogram":
+                        perSeatAmount = 1900;
+                        break;
+                    case "Barishal":
+                        perSeatAmount = 850;
+                        break;
+                    case "Rajshahi":
+                        perSeatAmount = 1200;
+                        break;
+                    case "Sylhet":
+                        perSeatAmount = 1900;
+                        break;
+                    case "Comilla":
+                        perSeatAmount = 1400;
+                        break;
+                    case "Rangpur":
+                        perSeatAmount = 1450;
+                        break;
+                }
+            }
+        }
+
+        //Invoke when select a trip from the available trip popup
+        public void showClassAndPrice()
+        {
+            busFare(destinatonBox.Text);
+            busClassTxt.Text = selectedBusClass;
+            busFareTxt.Text = perSeatAmount.ToString();
+        }
     }
 }
