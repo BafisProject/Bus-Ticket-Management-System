@@ -82,6 +82,8 @@ namespace BusTicketManagementSystem.Popups
                     User_Controls.Ticket_booking.Ticket_booking_Instance.selectedTripNumber = selectedTripID;
                     User_Controls.Ticket_booking.Ticket_booking_Instance.selectedBusClass = selectedCoachClass;
                     User_Controls.Ticket_booking.Ticket_booking_Instance.selectedBusNumber = selectedCoachNumber;
+                    User_Controls.Ticket_booking.Ticket_booking_Instance.totalAmount = 0;
+                    User_Controls.Ticket_booking.Ticket_booking_Instance.grandTotal.Text = "0 TAKA";
 
                     User_Controls.Ticket_booking.Ticket_booking_Instance.showClassAndPrice();
                     User_Controls.Ticket_booking.Ticket_booking_Instance.showSeats();

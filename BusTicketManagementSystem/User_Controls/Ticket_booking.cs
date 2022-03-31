@@ -20,7 +20,7 @@ namespace BusTicketManagementSystem.User_Controls
         public string selectedBusClass = "";
         public string selectedBusNumber = "";
         string seatSelection;
-        float totalAmount = 0, perSeatAmount = 0;
+        public float totalAmount = 0, perSeatAmount = 0;
 
         //Constructor
         public Ticket_booking()
@@ -209,7 +209,6 @@ namespace BusTicketManagementSystem.User_Controls
                 button[i].Enabled = true;
                 button[i].Checked = false;
                 seatSelection = "";
-                label14.Text = seatSelection;
                 button[i].Cursor = Cursors.Default;
             }
 
@@ -281,19 +280,33 @@ namespace BusTicketManagementSystem.User_Controls
                         reservedID = reservationIDReader["reservation_ID"].ToString();
                     }
 
-                    //Generating a ticket for the passenger
-                    if(reservedID != "")
+                    //Generating random ticket number and inserting data to ticket table
+                    Random random = new Random();
+                    string ticketNumber = "#(" + selectedBusNumber + ")-" + random.Next(10000, 20000).ToString();
+
+                    if (reservedID != "")
                     {
-                        Random random = new Random();
-                        string ticketNumber = "#(" + selectedBusNumber + ")-" + random.Next(10000, 20000).ToString();
                         string purchasedTime = DateTime.Now.ToString("hh:mm tt");
                         string purchasedDate = DateTime.Now.ToString("yyyy-MM-dd");
                         db.SetData("INSERT INTO Ticket VALUES('"+ticketNumber+"','"+purchasedTime+"','"+purchasedDate+"','"+totalAmount+"','"+reservedID+"')");
                     }
 
                     MessageBox.Show("Purchase Completed for " + psngName, "RESERVED SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+                    //Genertaing Ticket For the passenger
+                    Popups.Bus_Ticket bus_Ticket = new Popups.Bus_Ticket(ticketNumber, psngPhone, totalAmount.ToString(), destinatonBox.Text, departDate.Value.ToString("dd/MM/yyyy"), departTime.Value.ToString("hh:mm tt"), seatSelection, selectedBusNumber);
+
+                    //resetting all fields
                     passengerName.Text = "";
                     passengerPhone.Text = "";
+                    totalAmount = 0;
+                    grandTotal.Text = totalAmount.ToString() + " TAKA";
+
+                    //showing ticket popup
+
+                    bus_Ticket.ShowDialog();
+
+
                     showSeats();
                 }
             }
@@ -328,9 +341,7 @@ namespace BusTicketManagementSystem.User_Controls
         private void seatClick(object sender, EventArgs e)
         {
             Guna2Button button = (Guna2Button)sender;
-            seatBtnToggle(button, button.Text);
-            label14.Text = seatSelection + " " + selectedBusClass;
-            
+            seatBtnToggle(button, button.Text);          
             grandTotal.Text = totalAmount.ToString() + " TAKA";
         }
 

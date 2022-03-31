@@ -98,6 +98,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\Bus_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\Bus_Ticket.Designer.cs">
+      <DependentUpon>Bus_Ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\EditBusInfo_Popup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     <Compile Include="User_Controls\Bus_Info.Designer.cs">
       <DependentUpon>Bus_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\Reservations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Reservations.Designer.cs">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\Ticket_booking.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\Bus_Ticket.resx">
+      <DependentUpon>Bus_Ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\EditBusInfo_Popup.resx">
       <DependentUpon>EditBusInfo_Popup.cs</DependentUpon>
@@ -172,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Bus_Info.resx">
       <DependentUpon>Bus_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Reservations.resx">
+      <DependentUpon>Reservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Ticket_booking.resx">
       <DependentUpon>Ticket_booking.cs</DependentUpon>

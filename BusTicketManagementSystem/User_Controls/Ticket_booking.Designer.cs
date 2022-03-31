@@ -29,28 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ticket_booking));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.bookingFromPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.busFareTxt = new System.Windows.Forms.Label();
+            this.busClassTxt = new System.Windows.Forms.Label();
             this.grandTotal = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnConfirmBooking = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -118,11 +122,6 @@
             this.A3 = new Guna.UI2.WinForms.Guna2Button();
             this.A1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.busClassTxt = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.busFareTxt = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bookingFromPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -142,7 +141,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.bookingFromPanel);
             this.panel1.Controls.Add(this.btnCheckNow);
             this.panel1.Controls.Add(this.label2);
@@ -157,16 +155,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 626);
             this.panel1.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(406, 26);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 21);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "label14";
             // 
             // bookingFromPanel
             // 
@@ -202,6 +190,17 @@
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(182, 258);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(64, 15);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "(Per Seat)";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -213,6 +212,28 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "(On Cash)";
             // 
+            // busFareTxt
+            // 
+            this.busFareTxt.AutoSize = true;
+            this.busFareTxt.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busFareTxt.ForeColor = System.Drawing.Color.White;
+            this.busFareTxt.Location = new System.Drawing.Point(62, 253);
+            this.busFareTxt.Name = "busFareTxt";
+            this.busFareTxt.Size = new System.Drawing.Size(72, 18);
+            this.busFareTxt.TabIndex = 8;
+            this.busFareTxt.Text = "Loading...";
+            // 
+            // busClassTxt
+            // 
+            this.busClassTxt.AutoSize = true;
+            this.busClassTxt.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busClassTxt.ForeColor = System.Drawing.Color.White;
+            this.busClassTxt.Location = new System.Drawing.Point(62, 223);
+            this.busClassTxt.Name = "busClassTxt";
+            this.busClassTxt.Size = new System.Drawing.Size(72, 18);
+            this.busClassTxt.TabIndex = 8;
+            this.busClassTxt.Text = "Loading...";
+            // 
             // grandTotal
             // 
             this.grandTotal.AutoSize = true;
@@ -223,6 +244,28 @@
             this.grandTotal.Size = new System.Drawing.Size(58, 18);
             this.grandTotal.TabIndex = 8;
             this.grandTotal.Text = "0 TAKA";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.label16.Location = new System.Drawing.Point(6, 253);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 18);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "FARE";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.label8.Location = new System.Drawing.Point(6, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 18);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "CLASS";
             // 
             // label7
             // 
@@ -249,11 +292,11 @@
             this.btnConfirmBooking.ColorContrastOnClick = 45;
             this.btnConfirmBooking.ColorContrastOnHover = 45;
             this.btnConfirmBooking.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnConfirmBooking.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnConfirmBooking.CustomizableEdges = borderEdges1;
             this.btnConfirmBooking.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirmBooking.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnConfirmBooking.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -274,24 +317,24 @@
             this.btnConfirmBooking.IndicateFocus = false;
             this.btnConfirmBooking.Location = new System.Drawing.Point(5, 318);
             this.btnConfirmBooking.Name = "btnConfirmBooking";
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.BorderRadius = 10;
-            stateProperties15.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties15.BorderThickness = 1;
-            stateProperties15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.ForeColor = System.Drawing.Color.White;
-            stateProperties15.IconLeftImage = null;
-            stateProperties15.IconRightImage = null;
-            this.btnConfirmBooking.onHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties16.BorderRadius = 10;
-            stateProperties16.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties16.BorderThickness = 1;
-            stateProperties16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties16.ForeColor = System.Drawing.Color.White;
-            stateProperties16.IconLeftImage = null;
-            stateProperties16.IconRightImage = null;
-            this.btnConfirmBooking.OnPressedState = stateProperties16;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties1.BorderRadius = 10;
+            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties1.ForeColor = System.Drawing.Color.White;
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.btnConfirmBooking.onHoverState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.BorderRadius = 10;
+            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties2.BorderThickness = 1;
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.ForeColor = System.Drawing.Color.White;
+            stateProperties2.IconLeftImage = null;
+            stateProperties2.IconRightImage = null;
+            this.btnConfirmBooking.OnPressedState = stateProperties2;
             this.btnConfirmBooking.Size = new System.Drawing.Size(241, 40);
             this.btnConfirmBooking.TabIndex = 7;
             this.btnConfirmBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,26 +432,26 @@
             this.passengerPhone.Modified = false;
             this.passengerPhone.Multiline = false;
             this.passengerPhone.Name = "passengerPhone";
-            stateProperties17.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerPhone.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.Empty;
-            stateProperties18.FillColor = System.Drawing.Color.White;
-            stateProperties18.ForeColor = System.Drawing.Color.Empty;
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.passengerPhone.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerPhone.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
-            stateProperties20.ForeColor = System.Drawing.Color.White;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerPhone.OnIdleState = stateProperties20;
+            stateProperties3.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerPhone.OnActiveState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Empty;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.passengerPhone.OnDisabledState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerPhone.OnHoverState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            stateProperties6.ForeColor = System.Drawing.Color.White;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerPhone.OnIdleState = stateProperties6;
             this.passengerPhone.PasswordChar = '\0';
             this.passengerPhone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(129)))), ((int)(((byte)(145)))));
             this.passengerPhone.PlaceholderText = "Enter phone number";
@@ -464,26 +507,26 @@
             this.passengerName.Modified = false;
             this.passengerName.Multiline = false;
             this.passengerName.Name = "passengerName";
-            stateProperties21.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerName.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.Empty;
-            stateProperties22.FillColor = System.Drawing.Color.White;
-            stateProperties22.ForeColor = System.Drawing.Color.Empty;
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.passengerName.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerName.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
-            stateProperties24.ForeColor = System.Drawing.Color.White;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passengerName.OnIdleState = stateProperties24;
+            stateProperties7.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerName.OnActiveState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Empty;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.passengerName.OnDisabledState = stateProperties8;
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerName.OnHoverState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            stateProperties10.ForeColor = System.Drawing.Color.White;
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passengerName.OnIdleState = stateProperties10;
             this.passengerName.PasswordChar = '\0';
             this.passengerName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(129)))), ((int)(((byte)(145)))));
             this.passengerName.PlaceholderText = "Enter passenger name";
@@ -518,11 +561,11 @@
             this.btnCheckNow.ColorContrastOnClick = 45;
             this.btnCheckNow.ColorContrastOnHover = 45;
             this.btnCheckNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnCheckNow.CustomizableEdges = borderEdges3;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCheckNow.CustomizableEdges = borderEdges2;
             this.btnCheckNow.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCheckNow.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnCheckNow.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -543,24 +586,24 @@
             this.btnCheckNow.IndicateFocus = false;
             this.btnCheckNow.Location = new System.Drawing.Point(260, 163);
             this.btnCheckNow.Name = "btnCheckNow";
-            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties13.BorderRadius = 10;
-            stateProperties13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties13.BorderThickness = 1;
-            stateProperties13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties13.ForeColor = System.Drawing.Color.White;
-            stateProperties13.IconLeftImage = null;
-            stateProperties13.IconRightImage = null;
-            this.btnCheckNow.onHoverState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties14.BorderRadius = 10;
-            stateProperties14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties14.BorderThickness = 1;
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties14.ForeColor = System.Drawing.Color.White;
-            stateProperties14.IconLeftImage = null;
-            stateProperties14.IconRightImage = null;
-            this.btnCheckNow.OnPressedState = stateProperties14;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.BorderRadius = 10;
+            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties11.BorderThickness = 1;
+            stateProperties11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.ForeColor = System.Drawing.Color.White;
+            stateProperties11.IconLeftImage = null;
+            stateProperties11.IconRightImage = null;
+            this.btnCheckNow.onHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.BorderRadius = 10;
+            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties12.BorderThickness = 1;
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.ForeColor = System.Drawing.Color.White;
+            stateProperties12.IconLeftImage = null;
+            stateProperties12.IconRightImage = null;
+            this.btnCheckNow.OnPressedState = stateProperties12;
             this.btnCheckNow.Size = new System.Drawing.Size(165, 36);
             this.btnCheckNow.TabIndex = 18;
             this.btnCheckNow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1806,61 +1849,6 @@
             this.A1.TextOffset = new System.Drawing.Point(0, 3);
             this.A1.Click += new System.EventHandler(this.seatClick);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(6, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 18);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "CLASS";
-            // 
-            // busClassTxt
-            // 
-            this.busClassTxt.AutoSize = true;
-            this.busClassTxt.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busClassTxt.ForeColor = System.Drawing.Color.White;
-            this.busClassTxt.Location = new System.Drawing.Point(62, 223);
-            this.busClassTxt.Name = "busClassTxt";
-            this.busClassTxt.Size = new System.Drawing.Size(72, 18);
-            this.busClassTxt.TabIndex = 8;
-            this.busClassTxt.Text = "Loading...";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.label16.Location = new System.Drawing.Point(6, 253);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 18);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "FARE";
-            // 
-            // busFareTxt
-            // 
-            this.busFareTxt.AutoSize = true;
-            this.busFareTxt.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busFareTxt.ForeColor = System.Drawing.Color.White;
-            this.busFareTxt.Location = new System.Drawing.Point(62, 253);
-            this.busFareTxt.Name = "busFareTxt";
-            this.busFareTxt.Size = new System.Drawing.Size(72, 18);
-            this.busFareTxt.TabIndex = 8;
-            this.busFareTxt.Text = "Loading...";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(182, 258);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 15);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "(Per Seat)";
-            // 
             // Ticket_booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -1908,7 +1896,6 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox passengerPhone;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnConfirmBooking;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label grandTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button A1;
@@ -1964,11 +1951,11 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Panel seatDistributionPanel;
         public System.Windows.Forms.Panel bookingFromPanel;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label busFareTxt;
         private System.Windows.Forms.Label busClassTxt;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label grandTotal;
     }
 }

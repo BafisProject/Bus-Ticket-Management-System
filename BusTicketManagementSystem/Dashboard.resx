@@ -12012,17 +12012,6 @@
         RK5CYII=
 </value>
   </data>
-  <data name="guna2Button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAVJJREFUSEvV
-        lMFxwjAQRV1COgglUEJK4MaVEugg3HJNB6ED6IB0kNxzIB3ALUfl//UurCXZksIMM3kzfyytVvstyXJ3
-        F0IIK+gEedhfacptoNAZ2qsIn+/QSccXDE7Al3mDZlIwRlJC2Glb3hpPMdP2hu0KaDTnnAH9mGDFuWWC
-        9msNyJFzBujAXtu3rMBYcN4FBHgGOxWx9lnHWw02UthAgFtCEw/7tppPidQzNJgCyZfzaCA1QPABeo70
-        Af2FrEHrPk9RNOD+86LFqj2LosFawwkYqzEpGvBGHkYU8w35VfL+ZG9z6xlwJWmhMZDsDTiZfVPujvCr
-        e4S+IK7Y60XLXkHQG7xqWEDf/rKG7DGeP303YSkTPQh6gxJP0LpvJqTFCQZK/3zPmEG+uIEEfhE15Aym
-        ixMkzaH4QHPEBuXiBpJn0BYaM7IvaCm9luL/kK77Bb0KWlZoKda9AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnBusInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAL5JREFUSEvt
@@ -12032,17 +12021,7 @@
         KIoBX9JHf3hYwJkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAARdJREFUSEvl
-        lY0NgjAQhRmBERyBDVzBDWQENoANZAPdgBFkE9hAN8D32qvU/kiJJkb9khev96490LZmv800TTtokKEH
-        vJE1MlwPJjfQJHEO1aJccqRhnAwnQAcrNg1ULKhFnbiFasZRpMjAJ64YiBdrwBrWGsJvBGOj/Tul5Av5
-        7FVW0zleqbIzG+YfQFI9rcUF2kNbqGPC4QjRYw1rbSpZdgZJ+yt4Ff9rYlJ7b+HPGlwh7hKe2lRWNejF
-        t7fpEkkN+ORctBWfh5Bj5pdIaqAOmgvz2n5KUgMenjNkvwHH7qEK8ZnfgHd/CHNlDGqURvg/AsaarRhj
-        lOV8YBZQyi6Jwbnqho2CAl7bJylOhbWc41/TX06W3QBiTRhB374SsQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="guna2Button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnReservations.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAOlJREFUSEvt
         lf0NgjAQxTsCIzgCG8gGOoIjOAIb4AYyAhvIBrqBK7hBfS93kkA/tX9oiL/kBdp7vRZaDrN+rLUnKESn
