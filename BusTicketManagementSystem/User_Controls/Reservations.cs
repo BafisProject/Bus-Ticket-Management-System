@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,55 +24,8 @@ namespace BusTicketManagementSystem.User_Controls
         public void showAllReservations()
         {
             //Fetching Data From Reservations Table...
-            var reservationReader = db.GetData("SELECT * FROM Reservation");
-            int i = 0;
-            reservationGrid.Rows.Clear();
-
-            while (reservationReader.Read())
-            {
-                //Fteching ticket number and Purchased Time based on reservation id
-                var readTicket = db.GetData("SELECT * FROM Ticket WHERE reservation_ID = '" + reservationReader["reservation_ID"].ToString() + "'");
-                if(reservationReader["reserved_seat"].ToString() == "")
-                {
-                    continue;
-                }
-                reservationGrid.Rows.Add();
-                while (readTicket.Read())
-                {
-                    //Adding it to the column(ticket number) of current row
-                    reservationGrid.Rows[i].Cells[0].Value = readTicket["ticket_number"].ToString();
-
-                    //Reading Purchased Date and Time
-                    DateTime dbPurchasedTime = DateTime.Parse(readTicket["purchased_time"].ToString());
-                    DateTime dbPurchasedDate = DateTime.Parse(readTicket["purchased_date"].ToString());
-
-                    ////Adding it to the column(purchased on) of current row
-                    reservationGrid.Rows[i].Cells[2].Value = dbPurchasedTime.ToString("hh:mm tt") + " (" + dbPurchasedDate.ToString("dd, MMM") + ")";
-                    break;
-                }
-
-                //Fteching passenger phone number from passenger table based on passenger id
-                var readPsngNumber = db.GetData("SELECT phone_number FROM Passenger WHERE passenger_ID = '" + reservationReader["passenger_ID"].ToString() + "'");
-                while (readPsngNumber.Read())
-                {
-                    //Adding it to the column(phone number) of current row
-                    reservationGrid.Rows[i].Cells[1].Value = readPsngNumber["phone_number"].ToString();
-                    break;
-                }
-
-                //Adding reserved seat of current passenger based on reserved id
-                reservationGrid.Rows[i].Cells[3].Value = reservationReader["reserved_seat"].ToString().TrimEnd(',');
-
-                //Fetching Bus Number
-                var readTrip = db.GetData("SELECT bus_number FROM Trip WHERE trip_ID = '"+ reservationReader["trip_ID"].ToString() + "'");
-                while (readTrip.Read())
-                {
-                    reservationGrid.Rows[i].Cells[4].Value = readTrip["bus_number"].ToString();
-                    break;
-                }
-
-                i++;
-            }
+            var reader = db.GetData("SELECT Ticket.ticket_number, Passenger.phone_number, Ticket.purchased_date, Ticket.purchased_time, Reservation.reserved_seat, Trip.bus_number FROM Reservation JOIN Ticket ON Reservation.reservation_ID = Ticket.reservation_ID JOIN Passenger ON Reservation.passenger_ID = Passenger.passenger_ID JOIN Trip ON Reservation.trip_ID = Trip.trip_ID");
+            populateGrid(reader);
         }
 
         private void Reservations_Load(object sender, EventArgs e)
@@ -145,6 +99,36 @@ namespace BusTicketManagementSystem.User_Controls
             db.SetData("UPDATE Ticket SET total_fare = '" + deductedAmount + "' WHERE ticket_number = '" + ticketNumber + "'");
             db.SetData("UPDATE Reservation SET reserved_seat = '' WHERE reservation_ID = '" + reservationID + "'");
             MessageBox.Show("Return: " + returnAmount.ToString() + " TAKA", "Successfully Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //Search Box Event
+        private void searchBoxEvenet(object sender, EventArgs e)
+        {
+            //var reader = db.GetData("SELECT * FROM Bus WHERE bus_number LIKE '" + searchBox.Text + "%'");
+            var reader = db.GetData("SELECT Ticket.ticket_number, Passenger.phone_number, Ticket.purchased_date, Ticket.purchased_time, Reservation.reserved_seat, Trip.bus_number FROM Reservation JOIN Ticket ON Reservation.reservation_ID = Ticket.reservation_ID JOIN Passenger ON Reservation.passenger_ID = Passenger.passenger_ID JOIN Trip ON Reservation.trip_ID = Trip.trip_ID WHERE ticket_number LIKE '%" + searchBox.Text + "%'");
+            populateGrid(reader);
+        }
+
+        //Function to populate data inside
+        void populateGrid(SqlDataReader reader)
+        {
+            int i = 0;
+            reservationGrid.Rows.Clear();
+
+            while (reader.Read())
+            {
+                if (reader["reserved_seat"].ToString() == "")
+                {
+                    continue;
+                }
+                reservationGrid.Rows.Add();
+                reservationGrid.Rows[i].Cells[0].Value = reader["ticket_number"].ToString();
+                reservationGrid.Rows[i].Cells[1].Value = reader["phone_number"].ToString();
+                reservationGrid.Rows[i].Cells[2].Value = (DateTime.Parse(reader["purchased_time"].ToString())).ToString("hh:mm tt") + " (" + (DateTime.Parse(reader["purchased_date"].ToString())).ToString("dd, MMM") + ")";
+                reservationGrid.Rows[i].Cells[3].Value = reader["reserved_seat"].ToString().TrimEnd(',');
+                reservationGrid.Rows[i].Cells[4].Value = reader["bus_number"].ToString();
+                i++;
+            }
         }
     }
 }

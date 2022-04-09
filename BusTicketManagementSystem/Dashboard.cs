@@ -34,6 +34,7 @@ namespace BusTicketManagementSystem
             btnBusInfo.Checked = false;
             btnTicketBooking.Checked = false;
             btnReservations.Checked = false;
+            btnAnalytics.Checked = false;
         }
 
         private void hideallUserControl()
@@ -43,6 +44,7 @@ namespace BusTicketManagementSystem
             bus_Info1.Visible = false;
             ticket_booking1.Visible = false;
             reservations1.Visible = false;
+            analytics1.Visible = false;
         }
 
         private void showUserControl(UserControl x, Guna2Button y)
@@ -90,6 +92,9 @@ namespace BusTicketManagementSystem
                     break;
                 case "reservations1":
                     showUserControl(reservations1, button);
+                    break;
+                case "analytics1":
+                    showUserControl(analytics1, button);
                     break;
             }
 
