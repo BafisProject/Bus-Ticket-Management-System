@@ -44,6 +44,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bookingFromPanel = new System.Windows.Forms.Panel();
@@ -64,13 +67,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.passengerPhone = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.passengerName = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
+            this.btnShowDirection = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCheckNow = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.departDate = new System.Windows.Forms.DateTimePicker();
             this.departTime = new System.Windows.Forms.DateTimePicker();
+            this.sourceBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.destinatonBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.seatDistributionPanel = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -142,13 +147,15 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.bookingFromPanel);
+            this.panel1.Controls.Add(this.btnShowDirection);
             this.panel1.Controls.Add(this.btnCheckNow);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.departDate);
             this.panel1.Controls.Add(this.departTime);
+            this.panel1.Controls.Add(this.sourceBox);
             this.panel1.Controls.Add(this.destinatonBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -175,7 +182,7 @@
             this.bookingFromPanel.Controls.Add(this.label5);
             this.bookingFromPanel.Controls.Add(this.passengerPhone);
             this.bookingFromPanel.Controls.Add(this.passengerName);
-            this.bookingFromPanel.Location = new System.Drawing.Point(64, 221);
+            this.bookingFromPanel.Location = new System.Drawing.Point(64, 243);
             this.bookingFromPanel.Name = "bookingFromPanel";
             this.bookingFromPanel.Size = new System.Drawing.Size(361, 368);
             this.bookingFromPanel.TabIndex = 19;
@@ -547,6 +554,70 @@
             this.passengerName.UseSystemPasswordChar = false;
             this.passengerName.WordWrap = true;
             // 
+            // btnShowDirection
+            // 
+            this.btnShowDirection.AllowToggling = false;
+            this.btnShowDirection.AnimationSpeed = 200;
+            this.btnShowDirection.AutoGenerateColors = false;
+            this.btnShowDirection.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowDirection.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.btnShowDirection.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowDirection.BackgroundImage")));
+            this.btnShowDirection.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnShowDirection.ButtonText = "DIRECTION";
+            this.btnShowDirection.ButtonTextMarginLeft = 0;
+            this.btnShowDirection.ColorContrastOnClick = 45;
+            this.btnShowDirection.ColorContrastOnHover = 45;
+            this.btnShowDirection.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnShowDirection.CustomizableEdges = borderEdges2;
+            this.btnShowDirection.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnShowDirection.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.btnShowDirection.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnShowDirection.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnShowDirection.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnShowDirection.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDirection.ForeColor = System.Drawing.Color.White;
+            this.btnShowDirection.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowDirection.IconMarginLeft = 11;
+            this.btnShowDirection.IconPadding = 10;
+            this.btnShowDirection.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowDirection.IdleBorderColor = System.Drawing.Color.Transparent;
+            this.btnShowDirection.IdleBorderRadius = 10;
+            this.btnShowDirection.IdleBorderThickness = 1;
+            this.btnShowDirection.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.btnShowDirection.IdleIconLeftImage = null;
+            this.btnShowDirection.IdleIconRightImage = null;
+            this.btnShowDirection.IndicateFocus = false;
+            this.btnShowDirection.Location = new System.Drawing.Point(257, 192);
+            this.btnShowDirection.Name = "btnShowDirection";
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.BorderRadius = 10;
+            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties11.BorderThickness = 1;
+            stateProperties11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.ForeColor = System.Drawing.Color.White;
+            stateProperties11.IconLeftImage = null;
+            stateProperties11.IconRightImage = null;
+            this.btnShowDirection.onHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.BorderRadius = 10;
+            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties12.BorderThickness = 1;
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.ForeColor = System.Drawing.Color.White;
+            stateProperties12.IconLeftImage = null;
+            stateProperties12.IconRightImage = null;
+            this.btnShowDirection.OnPressedState = stateProperties12;
+            this.btnShowDirection.Size = new System.Drawing.Size(165, 36);
+            this.btnShowDirection.TabIndex = 18;
+            this.btnShowDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnShowDirection.TextMarginLeft = 0;
+            this.btnShowDirection.UseDefaultRadiusAndThickness = true;
+            this.btnShowDirection.Click += new System.EventHandler(this.showDirection);
+            // 
             // btnCheckNow
             // 
             this.btnCheckNow.AllowToggling = false;
@@ -561,11 +632,11 @@
             this.btnCheckNow.ColorContrastOnClick = 45;
             this.btnCheckNow.ColorContrastOnHover = 45;
             this.btnCheckNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnCheckNow.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnCheckNow.CustomizableEdges = borderEdges3;
             this.btnCheckNow.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCheckNow.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnCheckNow.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -584,26 +655,26 @@
             this.btnCheckNow.IdleIconLeftImage = null;
             this.btnCheckNow.IdleIconRightImage = null;
             this.btnCheckNow.IndicateFocus = false;
-            this.btnCheckNow.Location = new System.Drawing.Point(260, 163);
+            this.btnCheckNow.Location = new System.Drawing.Point(61, 192);
             this.btnCheckNow.Name = "btnCheckNow";
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.BorderRadius = 10;
-            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties11.BorderThickness = 1;
-            stateProperties11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.ForeColor = System.Drawing.Color.White;
-            stateProperties11.IconLeftImage = null;
-            stateProperties11.IconRightImage = null;
-            this.btnCheckNow.onHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties12.BorderRadius = 10;
-            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties12.BorderThickness = 1;
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties12.ForeColor = System.Drawing.Color.White;
-            stateProperties12.IconLeftImage = null;
-            stateProperties12.IconRightImage = null;
-            this.btnCheckNow.OnPressedState = stateProperties12;
+            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties13.BorderRadius = 10;
+            stateProperties13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties13.BorderThickness = 1;
+            stateProperties13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties13.ForeColor = System.Drawing.Color.White;
+            stateProperties13.IconLeftImage = null;
+            stateProperties13.IconRightImage = null;
+            this.btnCheckNow.onHoverState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties14.BorderRadius = 10;
+            stateProperties14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties14.BorderThickness = 1;
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties14.ForeColor = System.Drawing.Color.White;
+            stateProperties14.IconLeftImage = null;
+            stateProperties14.IconRightImage = null;
+            this.btnCheckNow.OnPressedState = stateProperties14;
             this.btnCheckNow.Size = new System.Drawing.Size(165, 36);
             this.btnCheckNow.TabIndex = 18;
             this.btnCheckNow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -617,7 +688,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(64, 130);
+            this.label2.Location = new System.Drawing.Point(257, 98);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label2.Size = new System.Drawing.Size(88, 15);
@@ -630,25 +701,25 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(260, 38);
+            this.label1.Location = new System.Drawing.Point(61, 98);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(88, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Travel Date";
             // 
-            // label3
+            // label14
             // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(260, 130);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(130, 15);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Check Availability";
+            this.label14.AutoSize = true;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label14.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(254, 13);
+            this.label14.Name = "label14";
+            this.label14.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.label14.Size = new System.Drawing.Size(89, 15);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Destination";
             // 
             // label4
             // 
@@ -656,12 +727,12 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(64, 38);
+            this.label4.Location = new System.Drawing.Point(61, 13);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(133, 15);
+            this.label4.Size = new System.Drawing.Size(57, 15);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Travel Destination";
+            this.label4.Text = "Source";
             // 
             // departDate
             // 
@@ -672,7 +743,7 @@
             this.departDate.CustomFormat = "  dd, MMM, yyyy";
             this.departDate.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.departDate.Location = new System.Drawing.Point(260, 71);
+            this.departDate.Location = new System.Drawing.Point(61, 131);
             this.departDate.MinimumSize = new System.Drawing.Size(165, 36);
             this.departDate.Name = "departDate";
             this.departDate.Size = new System.Drawing.Size(165, 36);
@@ -687,13 +758,45 @@
             this.departTime.CustomFormat = "  hh:mm tt";
             this.departTime.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.departTime.Location = new System.Drawing.Point(64, 163);
+            this.departTime.Location = new System.Drawing.Point(257, 131);
             this.departTime.MinimumSize = new System.Drawing.Size(165, 36);
             this.departTime.Name = "departTime";
             this.departTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.departTime.ShowUpDown = true;
             this.departTime.Size = new System.Drawing.Size(165, 36);
             this.departTime.TabIndex = 16;
+            // 
+            // sourceBox
+            // 
+            this.sourceBox.BackColor = System.Drawing.Color.Transparent;
+            this.sourceBox.BorderRadius = 6;
+            this.sourceBox.BorderThickness = 0;
+            this.sourceBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.sourceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sourceBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            this.sourceBox.FocusedColor = System.Drawing.Color.Empty;
+            this.sourceBox.FocusedState.Parent = this.sourceBox;
+            this.sourceBox.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.sourceBox.ForeColor = System.Drawing.Color.White;
+            this.sourceBox.FormattingEnabled = true;
+            this.sourceBox.HoverState.Parent = this.sourceBox;
+            this.sourceBox.ItemHeight = 30;
+            this.sourceBox.Items.AddRange(new object[] {
+            "Dhaka",
+            "Chattogram",
+            "Khulna",
+            "Barishal",
+            "Rajshahi",
+            "Sylhet",
+            "Comilla",
+            "Rangpur"});
+            this.sourceBox.ItemsAppearance.Parent = this.sourceBox;
+            this.sourceBox.Location = new System.Drawing.Point(61, 45);
+            this.sourceBox.Name = "sourceBox";
+            this.sourceBox.ShadowDecoration.Parent = this.sourceBox;
+            this.sourceBox.Size = new System.Drawing.Size(165, 36);
+            this.sourceBox.TabIndex = 3;
+            this.sourceBox.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // destinatonBox
             // 
@@ -713,13 +816,14 @@
             this.destinatonBox.Items.AddRange(new object[] {
             "Dhaka",
             "Chattogram",
+            "Khulna",
             "Barishal",
             "Rajshahi",
             "Sylhet",
             "Comilla",
             "Rangpur"});
             this.destinatonBox.ItemsAppearance.Parent = this.destinatonBox;
-            this.destinatonBox.Location = new System.Drawing.Point(64, 71);
+            this.destinatonBox.Location = new System.Drawing.Point(257, 45);
             this.destinatonBox.Name = "destinatonBox";
             this.destinatonBox.ShadowDecoration.Parent = this.destinatonBox;
             this.destinatonBox.Size = new System.Drawing.Size(165, 36);
@@ -1948,7 +2052,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Panel seatDistributionPanel;
         public System.Windows.Forms.Panel bookingFromPanel;
         private System.Windows.Forms.Label label18;
@@ -1957,5 +2060,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label grandTotal;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2ComboBox sourceBox;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnShowDirection;
     }
 }

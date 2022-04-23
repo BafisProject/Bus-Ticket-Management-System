@@ -12,7 +12,7 @@ namespace BusTicketManagementSystem.Popups
 {
     public partial class Bus_Ticket : Form
     {
-        string ticketNumber, phoneNumber, total, destination, departDate, departTime, seats, busNumber;
+        string ticketNumber, phoneNumber, total, source, destination, departDate, departTime, seats, busNumber;
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -29,11 +29,12 @@ namespace BusTicketManagementSystem.Popups
             InitializeComponent();
         }
 
-        public Bus_Ticket(string ticketNumber, string phoneNumber, string total, string destination, string departDate, string departTime, string seats, string busNumber)
+        public Bus_Ticket(string ticketNumber, string phoneNumber, string total,string source, string destination, string departDate, string departTime, string seats, string busNumber)
         {
             this.ticketNumber = ticketNumber;
             this.phoneNumber = phoneNumber;
             this.total = total;
+            this.source = source;
             this.destination = destination;
             this.departDate = departDate;
             this.departTime = departTime;
@@ -53,6 +54,7 @@ namespace BusTicketManagementSystem.Popups
             ticketNumberBox.Text = ticketNumber;
             phoneNumberBox.Text = phoneNumber;
             totalBox.Text = total;
+            fromBox.Text = source;
             destinationBox.Text = destination;
             departDateBox.Text = departDate;
             departTimeBox.Text = departTime;

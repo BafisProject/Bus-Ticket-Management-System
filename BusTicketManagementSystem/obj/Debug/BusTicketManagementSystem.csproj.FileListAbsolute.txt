@@ -43,3 +43,6 @@ C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementS
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.User_Controls.Reservations.resources
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.Popups.Bus_Ticket.resources
 C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.User_Controls.Analytics.resources
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.User_Controls.Bus_Fare.resources
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.Popups.Direction.resources
+C:\Users\USER\Documents\GitHub\Bus-Ticket-Management-System\BusTicketManagementSystem\obj\Debug\BusTicketManagementSystem.User_Controls.Passengers.resources

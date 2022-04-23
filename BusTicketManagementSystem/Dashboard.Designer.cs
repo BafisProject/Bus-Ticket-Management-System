@@ -34,8 +34,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAnalytics = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPassenger = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBusFare = new Guna.UI2.WinForms.Guna2Button();
             this.btnBusInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnReservations = new Guna.UI2.WinForms.Guna2Button();
             this.btnTicketBooking = new Guna.UI2.WinForms.Guna2Button();
@@ -45,16 +45,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.analytics1 = new BusTicketManagementSystem.User_Controls.Analytics();
             this.closeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bus_Fare1 = new BusTicketManagementSystem.User_Controls.Bus_Fare();
+            this.analytics1 = new BusTicketManagementSystem.User_Controls.Analytics();
             this.reservations1 = new BusTicketManagementSystem.User_Controls.Reservations();
             this.ticket_booking1 = new BusTicketManagementSystem.User_Controls.Ticket_booking();
             this.bus_Info1 = new BusTicketManagementSystem.User_Controls.Bus_Info();
             this.available_Trip1 = new BusTicketManagementSystem.User_Controls.Available_Trip();
             this.user_Dashboard1 = new BusTicketManagementSystem.User_Controls.User_Dashboard();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.passengers1 = new BusTicketManagementSystem.User_Controls.Passengers();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,8 +71,8 @@
             // 
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Controls.Add(this.btnAnalytics);
-            this.panel1.Controls.Add(this.guna2Button8);
+            this.panel1.Controls.Add(this.btnPassenger);
+            this.panel1.Controls.Add(this.btnBusFare);
             this.panel1.Controls.Add(this.btnBusInfo);
             this.panel1.Controls.Add(this.btnReservations);
             this.panel1.Controls.Add(this.btnTicketBooking);
@@ -124,7 +126,7 @@
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Location = new System.Drawing.Point(13, 445);
+            this.guna2Button2.Location = new System.Drawing.Point(12, 448);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(148, 37);
@@ -133,53 +135,55 @@
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.UseTransparentBackground = true;
             // 
-            // btnAnalytics
+            // btnPassenger
             // 
-            this.btnAnalytics.BackColor = System.Drawing.Color.Transparent;
-            this.btnAnalytics.BorderRadius = 6;
-            this.btnAnalytics.CheckedState.Parent = this.btnAnalytics;
-            this.btnAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnalytics.CustomImages.Parent = this.btnAnalytics;
-            this.btnAnalytics.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.btnAnalytics.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnalytics.ForeColor = System.Drawing.Color.White;
-            this.btnAnalytics.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
-            this.btnAnalytics.HoverState.Parent = this.btnAnalytics;
-            this.btnAnalytics.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalytics.Image")));
-            this.btnAnalytics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAnalytics.Location = new System.Drawing.Point(13, 401);
-            this.btnAnalytics.Name = "btnAnalytics";
-            this.btnAnalytics.ShadowDecoration.Parent = this.btnAnalytics;
-            this.btnAnalytics.Size = new System.Drawing.Size(148, 37);
-            this.btnAnalytics.TabIndex = 4;
-            this.btnAnalytics.Tag = "analytics1";
-            this.btnAnalytics.Text = "Analytics";
-            this.btnAnalytics.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAnalytics.UseTransparentBackground = true;
-            this.btnAnalytics.Click += new System.EventHandler(this.dashboardSidebarButton_Click);
+            this.btnPassenger.BackColor = System.Drawing.Color.Transparent;
+            this.btnPassenger.BorderRadius = 6;
+            this.btnPassenger.CheckedState.Parent = this.btnPassenger;
+            this.btnPassenger.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPassenger.CustomImages.Parent = this.btnPassenger;
+            this.btnPassenger.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.btnPassenger.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassenger.ForeColor = System.Drawing.Color.White;
+            this.btnPassenger.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
+            this.btnPassenger.HoverState.Parent = this.btnPassenger;
+            this.btnPassenger.Image = ((System.Drawing.Image)(resources.GetObject("btnPassenger.Image")));
+            this.btnPassenger.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPassenger.Location = new System.Drawing.Point(12, 403);
+            this.btnPassenger.Name = "btnPassenger";
+            this.btnPassenger.ShadowDecoration.Parent = this.btnPassenger;
+            this.btnPassenger.Size = new System.Drawing.Size(148, 37);
+            this.btnPassenger.TabIndex = 4;
+            this.btnPassenger.Tag = "passengers1";
+            this.btnPassenger.Text = "Passengers";
+            this.btnPassenger.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPassenger.UseTransparentBackground = true;
+            this.btnPassenger.Click += new System.EventHandler(this.dashboardSidebarButton_Click);
             // 
-            // guna2Button8
+            // btnBusFare
             // 
-            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.BorderRadius = 6;
-            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
-            this.guna2Button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
-            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.guna2Button8.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
-            this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button8.Image")));
-            this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.Location = new System.Drawing.Point(13, 357);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(148, 37);
-            this.guna2Button8.TabIndex = 4;
-            this.guna2Button8.Text = "Passengers";
-            this.guna2Button8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button8.UseTransparentBackground = true;
+            this.btnBusFare.BackColor = System.Drawing.Color.Transparent;
+            this.btnBusFare.BorderRadius = 6;
+            this.btnBusFare.CheckedState.Parent = this.btnBusFare;
+            this.btnBusFare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBusFare.CustomImages.Parent = this.btnBusFare;
+            this.btnBusFare.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.btnBusFare.Font = new System.Drawing.Font("Montserrat Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusFare.ForeColor = System.Drawing.Color.White;
+            this.btnBusFare.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
+            this.btnBusFare.HoverState.Parent = this.btnBusFare;
+            this.btnBusFare.Image = ((System.Drawing.Image)(resources.GetObject("btnBusFare.Image")));
+            this.btnBusFare.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBusFare.Location = new System.Drawing.Point(12, 358);
+            this.btnBusFare.Name = "btnBusFare";
+            this.btnBusFare.ShadowDecoration.Parent = this.btnBusFare;
+            this.btnBusFare.Size = new System.Drawing.Size(148, 37);
+            this.btnBusFare.TabIndex = 4;
+            this.btnBusFare.Tag = "bus_Fare1";
+            this.btnBusFare.Text = "Bus Fare";
+            this.btnBusFare.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBusFare.UseTransparentBackground = true;
+            this.btnBusFare.Click += new System.EventHandler(this.dashboardSidebarButton_Click);
             // 
             // btnBusInfo
             // 
@@ -195,7 +199,7 @@
             this.btnBusInfo.HoverState.Parent = this.btnBusInfo;
             this.btnBusInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnBusInfo.Image")));
             this.btnBusInfo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBusInfo.Location = new System.Drawing.Point(13, 313);
+            this.btnBusInfo.Location = new System.Drawing.Point(12, 313);
             this.btnBusInfo.Name = "btnBusInfo";
             this.btnBusInfo.ShadowDecoration.Parent = this.btnBusInfo;
             this.btnBusInfo.Size = new System.Drawing.Size(148, 37);
@@ -340,9 +344,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.analytics1);
             this.panel2.Controls.Add(this.closeBtn);
             this.panel2.Controls.Add(this.btnMinimize);
+            this.panel2.Controls.Add(this.passengers1);
+            this.panel2.Controls.Add(this.bus_Fare1);
+            this.panel2.Controls.Add(this.analytics1);
             this.panel2.Controls.Add(this.reservations1);
             this.panel2.Controls.Add(this.ticket_booking1);
             this.panel2.Controls.Add(this.bus_Info1);
@@ -353,16 +359,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 645);
             this.panel2.TabIndex = 1;
-            // 
-            // analytics1
-            // 
-            this.analytics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
-            this.analytics1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.analytics1.Location = new System.Drawing.Point(9, 9);
-            this.analytics1.Margin = new System.Windows.Forms.Padding(5);
-            this.analytics1.Name = "analytics1";
-            this.analytics1.Size = new System.Drawing.Size(977, 626);
-            this.analytics1.TabIndex = 11;
             // 
             // closeBtn
             // 
@@ -402,6 +398,40 @@
             this.btnMinimize.TabIndex = 7;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel2;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // bus_Fare1
+            // 
+            this.bus_Fare1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.bus_Fare1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bus_Fare1.Location = new System.Drawing.Point(9, 9);
+            this.bus_Fare1.Margin = new System.Windows.Forms.Padding(5);
+            this.bus_Fare1.Name = "bus_Fare1";
+            this.bus_Fare1.Size = new System.Drawing.Size(977, 626);
+            this.bus_Fare1.TabIndex = 12;
+            // 
+            // analytics1
+            // 
+            this.analytics1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.analytics1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.analytics1.Location = new System.Drawing.Point(9, 9);
+            this.analytics1.Margin = new System.Windows.Forms.Padding(5);
+            this.analytics1.Name = "analytics1";
+            this.analytics1.Size = new System.Drawing.Size(977, 626);
+            this.analytics1.TabIndex = 11;
+            // 
             // reservations1
             // 
             this.reservations1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
@@ -434,6 +464,7 @@
             // 
             // available_Trip1
             // 
+            this.available_Trip1.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.available_Trip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
             this.available_Trip1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.available_Trip1.Location = new System.Drawing.Point(9, 9);
@@ -453,19 +484,15 @@
             this.user_Dashboard1.Size = new System.Drawing.Size(977, 626);
             this.user_Dashboard1.TabIndex = 0;
             // 
-            // bunifuDragControl1
+            // passengers1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this.panel2;
-            this.bunifuDragControl2.Vertical = true;
+            this.passengers1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
+            this.passengers1.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passengers1.Location = new System.Drawing.Point(9, 9);
+            this.passengers1.Margin = new System.Windows.Forms.Padding(5);
+            this.passengers1.Name = "passengers1";
+            this.passengers1.Size = new System.Drawing.Size(977, 626);
+            this.passengers1.TabIndex = 13;
             // 
             // Dashboard
             // 
@@ -509,8 +536,7 @@
         private User_Controls.Available_Trip available_Trip1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnAnalytics;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button btnPassenger;
         private Guna.UI2.WinForms.Guna2Button btnBusInfo;
         private User_Controls.Bus_Info bus_Info1;
         private Guna.UI2.WinForms.Guna2CircleButton closeBtn;
@@ -518,5 +544,8 @@
         public User_Controls.Ticket_booking ticket_booking1;
         private User_Controls.Reservations reservations1;
         private User_Controls.Analytics analytics1;
+        private Guna.UI2.WinForms.Guna2Button btnBusFare;
+        private User_Controls.Bus_Fare bus_Fare1;
+        private User_Controls.Passengers passengers1;
     }
 }

@@ -21,6 +21,7 @@ namespace BusTicketManagementSystem.User_Controls
         public string selectedBusNumber = "";
         string seatSelection;
         public float totalAmount = 0, perSeatAmount = 0;
+        int seatCount = 1;
 
         //Constructor
         public Ticket_booking()
@@ -37,13 +38,14 @@ namespace BusTicketManagementSystem.User_Controls
             bookingFromPanel.Visible = false;
             selectedTripNumber = "";
 
+            string tripSource = sourceBox.Text;
             string tripDestination = destinatonBox.Text;
             string tripDate = departDate.Value.ToString("yyyy-MM-dd");
             string tripTime = departTime.Value.ToString("hh:mm tt");
 
-            if (!string.IsNullOrEmpty(tripDestination))
+            if (!string.IsNullOrEmpty(tripSource) && !string.IsNullOrEmpty(tripDestination))
             {
-                Popups.Trip_Availability trip_Availability = new Popups.Trip_Availability(tripDestination, tripDate, tripTime);
+                Popups.Trip_Availability trip_Availability = new Popups.Trip_Availability(tripSource, tripDestination, tripDate, tripTime);
                 trip_Availability.ShowDialog();
             }
             else
@@ -294,9 +296,10 @@ namespace BusTicketManagementSystem.User_Controls
                     MessageBox.Show("Purchase Completed for " + psngName, "RESERVED SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
                     //Genertaing Ticket For the passenger
-                    Popups.Bus_Ticket bus_Ticket = new Popups.Bus_Ticket(ticketNumber, psngPhone, totalAmount.ToString(), destinatonBox.Text, departDate.Value.ToString("dd/MM/yyyy"), departTime.Value.ToString("hh:mm tt"), seatSelection, selectedBusNumber);
+                    Popups.Bus_Ticket bus_Ticket = new Popups.Bus_Ticket(ticketNumber, psngPhone, totalAmount.ToString(), sourceBox.Text, destinatonBox.Text, departDate.Value.ToString("dd/MM/yyyy"), departTime.Value.ToString("hh:mm tt"), seatSelection, selectedBusNumber);
 
                     //resetting all fields
+                    seatCount = 1;
                     passengerName.Text = "";
                     passengerPhone.Text = "";
                     totalAmount = 0;
@@ -319,95 +322,78 @@ namespace BusTicketManagementSystem.User_Controls
         //This function will help to generate the selections of seats
         public void seatBtnToggle(Guna2Button button, string seat_no)
         {
+            string selectedSource =  sourceBox.Text;
             string selectedDestination = destinatonBox.Text;
-            busFare(selectedDestination);
+            
+            busFare(selectedSource, selectedDestination);
 
-            if (button.Checked == true)
-            {
-                seatSelection += seat_no + ",";  
-                totalAmount += perSeatAmount;               
-            }
-            else
-            {
-                seatSelection = seatSelection.Remove(seatSelection.IndexOf(seat_no), 3);
-                if(totalAmount > 0)
+                if (button.Checked == true)
                 {
-                    totalAmount -= perSeatAmount;
+                    seatSelection += seat_no + ",";
+                    totalAmount += perSeatAmount;
+                    seatCount++;
                 }
-            }
+                else
+                {
+                    seatSelection = seatSelection.Remove(seatSelection.IndexOf(seat_no), 3);
+                    if (totalAmount > 0)
+                    {
+                        totalAmount -= perSeatAmount;
+                        seatCount--;
+                        MessageBox.Show(seatCount.ToString());
+                    }
+                }
+
         }
 
         //All seat button click event
         private void seatClick(object sender, EventArgs e)
         {
-            Guna2Button button = (Guna2Button)sender;
-            seatBtnToggle(button, button.Text);          
-            grandTotal.Text = totalAmount.ToString() + " TAKA";
+            if(seatCount >= 0 && seatCount <= 5)
+            {
+                Guna2Button button = (Guna2Button)sender;
+                seatBtnToggle(button, button.Text);
+                grandTotal.Text = totalAmount.ToString() + " TAKA";
+            }
+            else
+            {
+                Guna2Button button = (Guna2Button)sender;
+                button.Checked = false;
+                MessageBox.Show("Individual Customer can't purchase more than 5 seats", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         //Bus Fare Based on destiantion and Class
-        void busFare(string selectedDestination)
+        void busFare(string selectedSource, string selectedDestination)
         {
-            if (selectedBusClass == "Economy")
+            var reader = db.GetData("SELECT * FROM Fare WHERE source = '" + selectedSource + "' AND destination = '" + selectedDestination + "' AND class = '" + selectedBusClass + "'");
+
+            while (reader.Read())
             {
-                switch (selectedDestination)
-                {
-                    case "Dhaka":
-                        perSeatAmount = 690;
-                        break;
-                    case "Chattogram":
-                        perSeatAmount = 1050;
-                        break;
-                    case "Barishal":
-                        perSeatAmount = 350;
-                        break;
-                    case "Rajshahi":
-                        perSeatAmount = 700;
-                        break;
-                    case "Sylhet":
-                        perSeatAmount = 1000;
-                        break;
-                    case "Comilla":
-                        perSeatAmount = 950;
-                        break;
-                    case "Rangpur":
-                        perSeatAmount = 800;
-                        break;
-                }
+                perSeatAmount = (float)Convert.ToDouble(reader["fare"].ToString());
             }
-            else if (selectedBusClass == "Business (AC)")
+        }
+
+        //Show Direction Button
+        private void showDirection(object sender, EventArgs e)
+        {
+            string source = sourceBox.Text;
+            string destination = destinatonBox.Text;
+            if(source != "" && destination != "")
             {
-                switch (selectedDestination)
-                {
-                    case "Dhaka":
-                        perSeatAmount = 1500;
-                        break;
-                    case "Chattogram":
-                        perSeatAmount = 1900;
-                        break;
-                    case "Barishal":
-                        perSeatAmount = 850;
-                        break;
-                    case "Rajshahi":
-                        perSeatAmount = 1200;
-                        break;
-                    case "Sylhet":
-                        perSeatAmount = 1900;
-                        break;
-                    case "Comilla":
-                        perSeatAmount = 1400;
-                        break;
-                    case "Rangpur":
-                        perSeatAmount = 1450;
-                        break;
-                }
+                Popups.Direction direction = new Popups.Direction(source, destination);
+                direction.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Please Select Source and Destination", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }           
         }
 
         //Invoke when select a trip from the available trip popup
         public void showClassAndPrice()
         {
-            busFare(destinatonBox.Text);
+            busFare(sourceBox.Text, destinatonBox.Text);
             busClassTxt.Text = selectedBusClass;
             busFareTxt.Text = perSeatAmount.ToString();
         }

@@ -23,13 +23,14 @@ namespace BusTicketManagementSystem.User_Controls
         //Adding Bus to the database
         private void btnAddTrip_Click(object sender, EventArgs e)
         {
+            string source = sourceComboBox.Text;
             string destination = destinationComboBox.Text;
             string departTime = departTimePicker.Value.ToString("hh:mm tt");
             string departDate = departDatePicker.Value.ToString("yyyy-MM-dd");
             string busNumber = busNumberText.Text;
             bool busAvailability = false, tripExist = false;
             //Checking any field is blank or not
-            if (String.IsNullOrEmpty(destination) || string.IsNullOrEmpty(departTime) || string.IsNullOrEmpty(departDate) || string.IsNullOrEmpty(busNumber))
+            if (String.IsNullOrEmpty(source) || String.IsNullOrEmpty(destination) || string.IsNullOrEmpty(departTime) || string.IsNullOrEmpty(departDate) || string.IsNullOrEmpty(busNumber))
             {
                 MessageBox.Show("Fill up all fields", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -59,10 +60,11 @@ namespace BusTicketManagementSystem.User_Controls
                 {
                     //IF bus available then it will check if any trip is already booked with the given value
                     var reader2 = db.GetData("SELECT * FROM Trip");
-                    string dbDestination = "", dbBusNumber, dbDepartDate;
+                    string dbSource = "", dbDestination = "", dbBusNumber, dbDepartDate;
                     DateTime dbDepartTime;
                     while (reader2.Read())
                     {
+                        dbSource = reader2["source"].ToString();
                         dbDestination = reader2["destination"].ToString();
                         dbDepartDate = string.Format("{0:yyyy-MM-dd}", reader2["depart_date"]);
                         dbDepartTime = DateTime.Parse(reader2["depart_time"].ToString());
@@ -90,15 +92,16 @@ namespace BusTicketManagementSystem.User_Controls
                         {
                             if(tripExist == false)
                             {
-                                db.SetData("INSERT INTO Trip VALUES('" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
+                                db.SetData("INSERT INTO Trip VALUES('" + source + "', '" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
                                 db.SetData("UPDATE Bus SET bus_status = 'Reserved' WHERE bus_number = '" + busNumber + "'");
+                                sourceComboBox.SelectedIndex = -1;
                                 destinationComboBox.SelectedIndex = -1;
                                 busNumberText.Text = "";
                                 MessageBox.Show("Trip Added Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("Trip Alredy Exist in " + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Trip Alredy Exist in Source: " + dbSource + " Destination: " + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
@@ -106,15 +109,16 @@ namespace BusTicketManagementSystem.User_Controls
                     {
                         if (tripExist == false)
                         {
-                            db.SetData("INSERT INTO Trip VALUES('" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
+                            db.SetData("INSERT INTO Trip VALUES('" + source + "', '" + destination + "', '" + departTime + "', '" + departDate + "', '" + busNumber + "')");
                             db.SetData("UPDATE Bus SET bus_status = 'Reserved' WHERE bus_number = '" + busNumber + "'");
+                            sourceComboBox.SelectedIndex = -1;
                             destinationComboBox.SelectedIndex = -1;
                             busNumberText.Text = "";
                             MessageBox.Show("Trip Added Successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Trip Alredy Exist in " + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Trip Alredy Exist in Source: " + dbSource + " Destination: " + dbDestination, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     
@@ -172,11 +176,12 @@ namespace BusTicketManagementSystem.User_Controls
             if (tripGrid.Columns[e.ColumnIndex].Name == "editColumn")
             {
                 int selectedID = Convert.ToInt32(tripGrid.Rows[e.RowIndex].Cells[0].Value);
-                string selectedDestination = tripGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string selectedTime = tripGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string selectedDate = tripGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string selectedBusNumber = tripGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-                Popups.EditTripInfo_Popup editTripInfo_Popup = new Popups.EditTripInfo_Popup(selectedID, selectedDestination, selectedTime, selectedDate, selectedBusNumber);
+                string selectedSource = tripGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string selectedDestination = tripGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string selectedTime = tripGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string selectedDate = tripGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string selectedBusNumber = tripGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+                Popups.EditTripInfo_Popup editTripInfo_Popup = new Popups.EditTripInfo_Popup(selectedID, selectedSource, selectedDestination, selectedTime, selectedDate, selectedBusNumber);
                 editTripInfo_Popup.ShowDialog();
             }
         }
@@ -239,12 +244,12 @@ namespace BusTicketManagementSystem.User_Controls
                     }
                     else
                     {
-                        tripGrid.Rows.Add(reader["trip_ID"], reader["destination"], time.ToString("hh:mm tt"), date, reader["bus_number"]);
+                        tripGrid.Rows.Add(reader["trip_ID"], reader["source"], reader["destination"], time.ToString("hh:mm tt"), date, reader["bus_number"]);
                     }
                 }
                 else
                 {
-                    tripGrid.Rows.Add(reader["trip_ID"], reader["destination"], time.ToString("hh:mm tt"), date, reader["bus_number"]);
+                    tripGrid.Rows.Add(reader["trip_ID"], reader["source"], reader["destination"], time.ToString("hh:mm tt"), date, reader["bus_number"]);
                 }
             }
         }

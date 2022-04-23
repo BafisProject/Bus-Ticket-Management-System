@@ -38,14 +38,15 @@ namespace BusTicketManagementSystem.User_Controls
         {
             string ticketNumber = reservationGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             string phoneNumber = reservationGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string grandTotal = "", destination = "", seats = "", reservationID = "";
+            string grandTotal = "", source = "", destination = "", seats = "", reservationID = "";
             DateTime departDate = DateTime.Now, departTime = DateTime.Now;
             string busNumber = reservationGrid.Rows[e.RowIndex].Cells[4].Value.ToString(); ;
 
-            var reader = db.GetData("SELECT total_fare, destination, depart_date, depart_time, reserved_seat, Ticket.reservation_ID FROM Ticket JOIN Reservation ON Ticket.reservation_ID = Reservation.reservation_ID JOIN Trip ON Reservation.trip_ID = Trip.trip_ID WHERE ticket_number = '" + ticketNumber + "'");
+            var reader = db.GetData("SELECT total_fare, source, destination, depart_date, depart_time, reserved_seat, Ticket.reservation_ID FROM Ticket JOIN Reservation ON Ticket.reservation_ID = Reservation.reservation_ID JOIN Trip ON Reservation.trip_ID = Trip.trip_ID WHERE ticket_number = '" + ticketNumber + "'");
             while (reader.Read())
             {
                 grandTotal = reader["total_fare"].ToString();
+                source = reader["source"].ToString();
                 destination = reader["destination"].ToString();
                 departDate = DateTime.Parse(reader["depart_date"].ToString());
                 departTime = DateTime.Parse(reader["depart_time"].ToString());
@@ -56,7 +57,7 @@ namespace BusTicketManagementSystem.User_Controls
             //ticket print
             if (reservationGrid.Columns[e.ColumnIndex].Name == "ticket_print")
             {
-                Popups.Bus_Ticket bus_Ticket = new Popups.Bus_Ticket(ticketNumber, phoneNumber, grandTotal, destination, departDate.ToString("dd-MM-yyyy"), departTime.ToString("hh:mm tt"), seats, busNumber);
+                Popups.Bus_Ticket bus_Ticket = new Popups.Bus_Ticket(ticketNumber, phoneNumber, grandTotal, source, destination, departDate.ToString("dd-MM-yyyy"), departTime.ToString("hh:mm tt"), seats, busNumber);
                 bus_Ticket.ShowDialog();
             }
             //cancellation

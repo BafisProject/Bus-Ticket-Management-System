@@ -15,16 +15,17 @@ namespace BusTicketManagementSystem.Popups
     {
         DatabaseFunctions db = new DatabaseFunctions();
         int id;
-        string destination, time, date, busNumber;
+        string source, destination, time, date, busNumber;
         public EditTripInfo_Popup()
         {
             InitializeComponent();
         }       
 
-        public EditTripInfo_Popup(int id, string destination, string time, string date, string busNumber)
+        public EditTripInfo_Popup(int id, string source, string destination, string time, string date, string busNumber)
         {
             InitializeComponent();
             this.id = id;
+            this.source = source;
             this.destination = destination;
             this.time = time;
             this.date = date;
@@ -35,13 +36,15 @@ namespace BusTicketManagementSystem.Popups
         private void EditTripInfo_Popup_Load(object sender, EventArgs e)
         {
             tripIDTxt.Text = "TRIP ID: " + id.ToString();
+            sourceComboBox.Text = source;
             destinationComboBox.Text = destination;
-            departTimePicker.Text = time.ToString();
-            departDatePicker.Text = date.ToString();
+            departTimePicker.Text = time;
+            departDatePicker.Text = date;
         }
 
         private void btnUpdateTrip_Click(object sender, EventArgs e)
         {
+            string selectedSource = sourceComboBox.Text;
             string selectedDestination = destinationComboBox.Text;
             string selectedTime = departTimePicker.Value.ToString("hh:mm tt");
             string selectedDate = departDatePicker.Value.ToString("yyyy-MM-dd");
@@ -50,11 +53,12 @@ namespace BusTicketManagementSystem.Popups
 
                 //IF bus available then it will check if any trip is already booked with the given value
                 var reader2 = db.GetData("SELECT * FROM Trip");
-                string dbDestination = "", dbBusNumber, dbDepartDate;
+                string dbSource = "", dbDestination = "", dbBusNumber, dbDepartDate;
                 bool tripExist = false;
                 DateTime dbDepartTime;
                 while (reader2.Read())
                 {
+                    dbSource = reader2["source"].ToString();
                     dbDestination = reader2["destination"].ToString();
                     dbDepartDate = string.Format("{0:yyyy-MM-dd}", reader2["depart_date"]);
                     dbDepartTime = DateTime.Parse(reader2["depart_time"].ToString());
@@ -80,11 +84,11 @@ namespace BusTicketManagementSystem.Popups
                     {
                         if(tripExist == true)
                         {
-                            MessageBox.Show("Bus already reserved for " + dbDestination + " on same time", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Bus already reserved for Source: " + dbSource + " Destination: " + dbDestination + " on same time", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            db.SetData("UPDATE Trip SET destination = '" + selectedDestination + "', depart_time = '" + selectedTime + "', depart_date = '" + selectedDate + "' WHERE trip_ID = " + id + "");
+                            db.SetData("UPDATE Trip SET source = '" + selectedSource + "', destination = '" + selectedDestination + "', depart_time = '" + selectedTime + "', depart_date = '" + selectedDate + "' WHERE trip_ID = " + id + "");
                             MessageBox.Show("Trip Updated", "UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
@@ -94,11 +98,11 @@ namespace BusTicketManagementSystem.Popups
                 {
                     if (tripExist == true)
                     {
-                        MessageBox.Show("Bus already reserved for " + dbDestination + " on same time", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Bus already reserved for Source: " + dbSource + " Destination: " + dbDestination + " on same time", "Unable to update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        db.SetData("UPDATE Trip SET destination = '" + selectedDestination + "', depart_time = '" + selectedTime + "', depart_date = '" + selectedDate + "' WHERE trip_ID = " + id + "");
+                        db.SetData("UPDATE Trip SET source = '" + selectedSource + "', destination = '" + selectedDestination + "', depart_time = '" + selectedTime + "', depart_date = '" + selectedDate + "' WHERE trip_ID = " + id + "");
                         MessageBox.Show("Trip Updated", "UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }

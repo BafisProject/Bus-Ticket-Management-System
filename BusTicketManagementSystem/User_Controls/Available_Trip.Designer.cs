@@ -57,6 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tripGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +68,8 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.sourceComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tripGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +116,7 @@
             this.btnAddTrip.IdleIconLeftImage = null;
             this.btnAddTrip.IdleIconRightImage = null;
             this.btnAddTrip.IndicateFocus = false;
-            this.btnAddTrip.Location = new System.Drawing.Point(774, 63);
+            this.btnAddTrip.Location = new System.Drawing.Point(774, 118);
             this.btnAddTrip.Name = "btnAddTrip";
             stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties5.BorderRadius = 10;
@@ -158,13 +161,14 @@
             this.destinationComboBox.Items.AddRange(new object[] {
             "Dhaka",
             "Chattogram",
+            "Khulna",
             "Barishal",
             "Rajshahi",
             "Sylhet",
             "Comilla",
             "Rangpur"});
             this.destinationComboBox.ItemsAppearance.Parent = this.destinationComboBox;
-            this.destinationComboBox.Location = new System.Drawing.Point(38, 63);
+            this.destinationComboBox.Location = new System.Drawing.Point(223, 62);
             this.destinationComboBox.Name = "destinationComboBox";
             this.destinationComboBox.ShadowDecoration.Parent = this.destinationComboBox;
             this.destinationComboBox.Size = new System.Drawing.Size(165, 36);
@@ -177,7 +181,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label4.Location = new System.Drawing.Point(38, 34);
+            this.label4.Location = new System.Drawing.Point(223, 33);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label4.Size = new System.Drawing.Size(89, 15);
@@ -193,7 +197,7 @@
             this.departTimePicker.CustomFormat = "  hh:mm tt";
             this.departTimePicker.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.departTimePicker.Location = new System.Drawing.Point(222, 63);
+            this.departTimePicker.Location = new System.Drawing.Point(407, 62);
             this.departTimePicker.MinimumSize = new System.Drawing.Size(165, 36);
             this.departTimePicker.Name = "departTimePicker";
             this.departTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -207,7 +211,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label5.Location = new System.Drawing.Point(219, 34);
+            this.label5.Location = new System.Drawing.Point(404, 33);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label5.Size = new System.Drawing.Size(99, 15);
@@ -223,7 +227,7 @@
             this.departDatePicker.CustomFormat = "  dd, MMM, yyyy";
             this.departDatePicker.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.departDatePicker.Location = new System.Drawing.Point(406, 63);
+            this.departDatePicker.Location = new System.Drawing.Point(591, 62);
             this.departDatePicker.MinimumSize = new System.Drawing.Size(165, 36);
             this.departDatePicker.Name = "departDatePicker";
             this.departDatePicker.Size = new System.Drawing.Size(165, 36);
@@ -235,7 +239,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label6.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label6.Location = new System.Drawing.Point(403, 34);
+            this.label6.Location = new System.Drawing.Point(588, 33);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label6.Size = new System.Drawing.Size(99, 15);
@@ -271,7 +275,7 @@
             this.busNumberText.IconRight = null;
             this.busNumberText.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.busNumberText.Lines = new string[0];
-            this.busNumberText.Location = new System.Drawing.Point(590, 64);
+            this.busNumberText.Location = new System.Drawing.Point(774, 63);
             this.busNumberText.MaxLength = 32767;
             this.busNumberText.MinimumSize = new System.Drawing.Size(100, 35);
             this.busNumberText.Modified = false;
@@ -322,7 +326,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.label7.Location = new System.Drawing.Point(587, 34);
+            this.label7.Location = new System.Drawing.Point(771, 34);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.label7.Size = new System.Drawing.Size(94, 15);
@@ -353,6 +357,7 @@
             this.tripGrid.ColumnHeadersHeight = 60;
             this.tripGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column6,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -418,6 +423,13 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 49;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "SOURCE";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column2
             // 
@@ -568,10 +580,56 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // sourceComboBox
+            // 
+            this.sourceComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.sourceComboBox.BorderRadius = 6;
+            this.sourceComboBox.BorderThickness = 0;
+            this.sourceComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.sourceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sourceComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(26)))), ((int)(((byte)(56)))));
+            this.sourceComboBox.FocusedColor = System.Drawing.Color.Empty;
+            this.sourceComboBox.FocusedState.Parent = this.sourceComboBox;
+            this.sourceComboBox.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.sourceComboBox.ForeColor = System.Drawing.Color.White;
+            this.sourceComboBox.FormattingEnabled = true;
+            this.sourceComboBox.HoverState.Parent = this.sourceComboBox;
+            this.sourceComboBox.ItemHeight = 30;
+            this.sourceComboBox.Items.AddRange(new object[] {
+            "Dhaka",
+            "Chattogram",
+            "Khulna",
+            "Barishal",
+            "Rajshahi",
+            "Sylhet",
+            "Comilla",
+            "Rangpur"});
+            this.sourceComboBox.ItemsAppearance.Parent = this.sourceComboBox;
+            this.sourceComboBox.Location = new System.Drawing.Point(38, 62);
+            this.sourceComboBox.Name = "sourceComboBox";
+            this.sourceComboBox.ShadowDecoration.Parent = this.sourceComboBox;
+            this.sourceComboBox.Size = new System.Drawing.Size(165, 36);
+            this.sourceComboBox.TabIndex = 9;
+            this.sourceComboBox.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.label1.Location = new System.Drawing.Point(38, 34);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Source";
+            // 
             // Available_Trip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(23)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSearch);
@@ -581,8 +639,10 @@
             this.Controls.Add(this.btnAddTrip);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.sourceComboBox);
             this.Controls.Add(this.destinationComboBox);
             this.Controls.Add(this.busNumberText);
             this.Controls.Add(this.tripGrid);
@@ -614,13 +674,16 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox searchBox;
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox sourceComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewImageColumn editColumn;
         private System.Windows.Forms.DataGridViewImageColumn deleteColumn;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

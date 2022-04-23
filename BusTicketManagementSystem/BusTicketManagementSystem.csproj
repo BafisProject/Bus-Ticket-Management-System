@@ -105,6 +105,12 @@
     <Compile Include="Popups\Bus_Ticket.Designer.cs">
       <DependentUpon>Bus_Ticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\Direction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\Direction.Designer.cs">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\EditBusInfo_Popup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,11 +143,23 @@
     <Compile Include="User_Controls\Available_Trip.Designer.cs">
       <DependentUpon>Available_Trip.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\Bus_Fare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Bus_Fare.Designer.cs">
+      <DependentUpon>Bus_Fare.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\Bus_Info.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User_Controls\Bus_Info.Designer.cs">
       <DependentUpon>Bus_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Passengers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Passengers.Designer.cs">
+      <DependentUpon>Passengers.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\Reservations.cs">
       <SubType>UserControl</SubType>
@@ -170,6 +188,9 @@
     <EmbeddedResource Include="Popups\Bus_Ticket.resx">
       <DependentUpon>Bus_Ticket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popups\Direction.resx">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popups\EditBusInfo_Popup.resx">
       <DependentUpon>EditBusInfo_Popup.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,8 +216,14 @@
     <EmbeddedResource Include="User_Controls\Available_Trip.resx">
       <DependentUpon>Available_Trip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Bus_Fare.resx">
+      <DependentUpon>Bus_Fare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Bus_Info.resx">
       <DependentUpon>Bus_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Passengers.resx">
+      <DependentUpon>Passengers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Reservations.resx">
       <DependentUpon>Reservations.cs</DependentUpon>

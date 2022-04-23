@@ -14,16 +14,17 @@ namespace BusTicketManagementSystem.Popups
     public partial class Trip_Availability : Form
     {
         DatabaseFunctions db = new DatabaseFunctions();
-        string destination, tripDate, tripTime;
+        string source, destination, tripDate, tripTime;
 
         public Trip_Availability()
         {
             InitializeComponent();
         }
 
-        public Trip_Availability(string destination, string tripDate, string tripTime)
+        public Trip_Availability(string source, string destination, string tripDate, string tripTime)
         {
             InitializeComponent();
+            this.source = source;
             this.destination = destination;
             this.tripDate = tripDate;
             this.tripTime = tripTime;
@@ -36,7 +37,7 @@ namespace BusTicketManagementSystem.Popups
 
         private void Trip_Availability_Load(object sender, EventArgs e)
         {
-            var reader = db.GetData("SELECT * FROM Trip WHERE destination = '"+destination+"' AND depart_date = '"+tripDate+"' AND depart_time = '"+tripTime+"'");
+            var reader = db.GetData("SELECT * FROM Trip WHERE source = '"+source+"' AND destination = '"+destination+"' AND depart_date = '"+tripDate+"' AND depart_time = '"+tripTime+"'");
             populateGrid(reader);
         }
 

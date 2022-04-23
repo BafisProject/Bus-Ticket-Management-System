@@ -34,7 +34,8 @@ namespace BusTicketManagementSystem
             btnBusInfo.Checked = false;
             btnTicketBooking.Checked = false;
             btnReservations.Checked = false;
-            btnAnalytics.Checked = false;
+            btnBusFare.Checked = false;
+            btnPassenger.Checked = false;
         }
 
         private void hideallUserControl()
@@ -45,6 +46,8 @@ namespace BusTicketManagementSystem
             ticket_booking1.Visible = false;
             reservations1.Visible = false;
             analytics1.Visible = false;
+            bus_Fare1.Visible = false;
+            passengers1.Visible = false;
         }
 
         private void showUserControl(UserControl x, Guna2Button y)
@@ -93,8 +96,11 @@ namespace BusTicketManagementSystem
                 case "reservations1":
                     showUserControl(reservations1, button);
                     break;
-                case "analytics1":
-                    showUserControl(analytics1, button);
+                case "bus_Fare1":
+                    showUserControl(bus_Fare1, button);
+                    break;
+                case "passengers1":
+                    showUserControl(passengers1, button);
                     break;
             }
 
@@ -108,6 +114,10 @@ namespace BusTicketManagementSystem
             available_Trip1.showAllTrip();
             //Refreshing Reservations
             reservations1.showAllReservations();
+            //Refreshing Bus Fare
+            bus_Fare1.showAllFare();
+            //Refreshing Passenger
+            passengers1.showAllPassengers();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
